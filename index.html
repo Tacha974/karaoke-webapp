@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ NONO KARAOKÉ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #5e60ce, #9d4edd, #f72585);
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .volet-button {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid white;
+      border-radius: 15px;
+      padding: 20px 40px;
+      font-size: 1.5em;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .volet-button:hover {
+      background-color: white;
+      color: #5e60ce;
+    }
+
+    .volet-button img {
+      height: 30px;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h1>DJ NONO KARAOKÉ</h1>
+  <div class="button-container">
+    <a class="volet-button" href="international.html">🌍 Variété internationale</a>
+    <a class="volet-button" href="francaise.html">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Tour_Eiffel_Wikimedia_Commons.jpg/60px-France_Wikimedia_Commons.jpg" alt=>
+      Variété française
+    </a>
+    <a class="volet-button" href="iles.html">🏝️ Variété des îles</a>
+  </div>
+  <footer>
+    © DJ NONO KARAOKÉ
+  </footer>
+</body>
+</html>
