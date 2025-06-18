@@ -89,16 +89,29 @@
   </div>
 
   <script>
-    const searchInput = document.getElementById('search');
-    const songs = document.getElementsByClassName('song');
+  const searchInput = document.getElementById('search');
+  const songs = document.getElementsByClassName('song');
 
-    searchInput.addEventListener('input', function () {
-      const filter = this.value.toLowerCase();
-      for (let i = 0; i < songs.length; i++) {
-        const text = songs[i].innerText.toLowerCase();
-        songs[i].style.display = text.includes(filter) ? 'flex' : 'none';
-      }
-    });
+  // Fonction pour normaliser un texte (supprime accents, apostrophes, tirets…)
+  function normalize(text) {
+    return text
+      .toLowerCase()
+      .normalize("NFD")                      // décompose accents (é → e + ́)
+      .replace(/[\u0300-\u036f]/g, "")      // supprime les accents
+      .replace(/['’"()\-.,]/g, "")          // supprime ponctuation
+      .replace(/\s+/g, " ")                 // espaces multiples -> un seul
+      .trim();
+  }
+
+  searchInput.addEventListener('input', function () {
+    const filter = normalize(this.value);
+    for (let i = 0; i < songs.length; i++) {
+      const text = normalize(songs[i].innerText);
+      songs[i].style.display = text.includes(filter) ? 'flex' : 'none';
+    }
+  });
+</script>
+
   </script>
 </body>
 </html>
