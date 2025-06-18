@@ -80,11 +80,6 @@
 <body>
   <h1>Variété Internationale</h1>
 
-  </style>
-</head>
-<body>
-  <h1>Variété Internationale</h1>
-
   <!-- Champ de recherche -->
   <input type="text" id="search" placeholder="Rechercher par artiste, titre ou année...">
 
@@ -93,16 +88,29 @@
   </div>
 
   <script>
-    const searchInput = document.getElementById('search');
-    const songs = document.getElementsByClassName('song');
+  const searchInput = document.getElementById('search');
+  const songs = document.getElementsByClassName('song');
 
-    searchInput.addEventListener('input', function () {
-      const filter = this.value.toLowerCase();
-      for (let i = 0; i < songs.length; i++) {
-        const text = songs[i].innerText.toLowerCase();
-        songs[i].style.display = text.includes(filter) ? 'flex' : 'none';
-      }
-    });
+  // Fonction pour nettoyer et normaliser le texte
+  function normalize(text) {
+    return text
+      .toLowerCase()
+      .normalize("NFD")                     // décompose accents
+      .replace(/[\u0300-\u036f]/g, "")     // supprime accents
+      .replace(/['’"()\-.,]/g, "")         // supprime ponctuation
+      .replace(/\s+/g, " ")                // réduit les espaces
+      .trim();
+  }
+
+  searchInput.addEventListener('input', function () {
+    const filter = normalize(this.value);
+    for (let i = 0; i < songs.length; i++) {
+      const text = normalize(songs[i].innerText);
+      songs[i].style.display = text.includes(filter) ? 'flex' : 'none';
+    }
+  });
+</script>
+
   </script>
 </body>
 </html>
