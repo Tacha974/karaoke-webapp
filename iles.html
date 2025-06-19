@@ -1,0 +1,7878 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Variété des îles - Karaoké</title>
+  <style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00);
+  color: #fff;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    #search {
+      display: block;
+      margin: 0 auto 2rem;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .song-list {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .song {
+      display: flex;
+      align-items: center;
+      background: rgba(255 255 255 / 0.15);
+      margin-bottom: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+    }
+    .song:hover {
+      background: rgba(255 255 255 / 0.3);
+      cursor: pointer;
+    }
+     .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+    .artist {
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    }
+    .title {
+      font-size: 1rem;
+      font-style: italic;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+    .details {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+  ...
+  .details {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+</style>
+</head>
+<body>
+  <h1>Variété des îles</h1>
+
+  <!-- Champ de recherche -->
+  <input type="text" id="search" placeholder="Rechercher par artiste, titre ou année...">
+
+  <div class="song-list">
+    <!-- Chansons ajoutées -->
+  </div>
+
+  <script>
+  const searchInput = document.getElementById('search');
+  const songs = document.getElementsByClassName('song');
+
+  // Fonction pour normaliser un texte (supprime accents, apostrophes, tirets…)
+  function normalize(text) {
+    return text
+      .toLowerCase()
+      .normalize("NFD")                      // décompose accents (é → e + ́)
+      .replace(/[\u0300-\u036f]/g, "")      // supprime les accents
+      .replace(/['’"()\-.,]/g, "")          // supprime ponctuation
+      .replace(/\s+/g, " ")                 // espaces multiples -> un seul
+      .trim();
+  }
+
+  searchInput.addEventListener('input', function () {
+    const filter = normalize(this.value);
+    for (let i = 0; i < songs.length; i++) {
+      const text = normalize(songs[i].innerText);
+      songs[i].style.display = text.includes(filter) ? 'flex' : 'none';
+    }
+  });
+</script>
+
+  </script>
+</body>
+</html>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aamir</div>
+    <div class="title">Alé wé des tropiques</div>
+    <div class="details">2010 - Zouk chiré</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Adam</div>
+    <div class="title">Si ou té yaime pa moin</div>
+    <div class="details"> - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Afatia</div>
+    <div class="title">Mon gan gueule</div>
+    <div class="details">2011 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Afro Style</div>
+    <div class="title">Aboudou</div>
+    <div class="details">2015 - Afrostyle</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aim a Nou</div>
+    <div class="title">Allo madmoizel</div>
+    <div class="details">1993 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aim a Nou</div>
+    <div class="title">Anida</div>
+    <div class="details">1999 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aim a Nou</div>
+    <div class="title">Drole sentiment</div>
+    <div class="details">1992 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aim a Nou</div>
+    <div class="title">I fé rien</div>
+    <div class="details">1999 - Seggae / Maloggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aim a Nou</div>
+    <div class="title">La guerre nucléaire</div>
+    <div class="details">1993 - Seggae / Maloggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aim a Nou</div>
+    <div class="title">Medley</div>
+    <div class="details"> - Seggae / Maloggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aim a Nou</div>
+    <div class="title">Ral bol</div>
+    <div class="details">1993 - Seggae / Maloggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aim a Nou</div>
+    <div class="title">Téléphone a moin</div>
+    <div class="details">2015 - Seggae / Maloggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aime Roland Realison</div>
+    <div class="title">Moustique</div>
+    <div class="details">1985 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aïna Quach</div>
+    <div class="title">Perturbée</div>
+    <div class="details">2008 - Zouk Love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Aissya</div>
+    <div class="title">L'intensité l'amour</div>
+    <div class="details">2017 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Akoutsa</div>
+    <div class="title">Koulèr mon pei</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Boyer</div>
+    <div class="title">Les faits pays</div>
+    <div class="details">1995 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Govindin</div>
+    <div class="title">Je t'aime</div>
+    <div class="details">1998 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Govindin</div>
+    <div class="title">Tendre Cathy</div>
+    <div class="details">2001 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Peters</div>
+    <div class="title">Caloubadia Paret</div>
+    <div class="details">1980 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Peters</div>
+    <div class="title">Rèss la maloya</div>
+    <div class="details">1982 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum</div>
+    <div class="title">Destin l'amour</div>
+    <div class="details">2005 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum</div>
+    <div class="title">Elle</div>
+    <div class="details">2007 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum</div>
+    <div class="title">Exilé dan l'enfer</div>
+    <div class="details">2009 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum</div>
+    <div class="title">Fiesta Ravana</div>
+    <div class="details">2006 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum</div>
+    <div class="title">La Réunion lé la Medley 974</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum & Sandra Esparon</div>
+    <div class="title">Lamityé nou zil</div>
+    <div class="details">2012 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum</div>
+    <div class="title">I love you</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum</div>
+    <div class="title">Mo pep</div>
+    <div class="details">2007 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum</div>
+    <div class="title">Oh la hé</div>
+    <div class="details">2005 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum</div>
+    <div class="title">Ousanousava</div>
+    <div class="details">2006 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alain Ramanisum</div>
+    <div class="title">Prisonnier</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Algeric</div>
+    <div class="title">Stop</div>
+    <div class="details">2014 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Algeric & Lea Churros</div>
+    <div class="title">Amour Consumé</div>
+    <div class="details">2016 - Zouk Love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ali Angel</div>
+    <div class="title">Panne de coeur</div>
+    <div class="details">2003 - Zouk Love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alix Bazin</div>
+    <div class="title">Fanm'</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Allianstars</div>
+    <div class="title">Cette nuit</div>
+    <div class="details">2008 - Zouk Love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alpha Blondy</div>
+    <div class="title">Boulevard de la mort</div>
+    <div class="details">2007 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alpha Blondy</div>
+    <div class="title">Brigadier Sabari</div>
+    <div class="details">1982 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alpha Blondy</div>
+    <div class="title">Le Métèque</div>
+    <div class="details">1998 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alpha Blondy</div>
+    <div class="title">Pompier pyromane</div>
+    <div class="details">1992 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alpha Blondy</div>
+    <div class="title">Sweet Fanta Diallo</div>
+    <div class="details">1987 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alpha Blondy</div>
+    <div class="title">Travailler c'est trop dur</div>
+    <div class="details">1991 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Alpha Blondy</div>
+    <div class="title">Une Petite Larme M'a Trahi</div>
+    <div class="details">1987 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ambition Kreol</div>
+    <div class="title">Po ou moman</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Amalia Rodrigues</div>
+    <div class="title">La maison sur le port</div>
+    <div class="details">1974 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">A ma mère</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Confiance totale</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Gel branché</div>
+    <div class="details">2005 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Je l'aime encore</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">La fille du troisième</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">La route littoral</div>
+    <div class="details">2005 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Moment de tendresse</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Mon désir</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Mon enfant ma vie</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Montagne lé bleu</div>
+    <div class="details">2005 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Notre idylle</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Sé ou</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Soirée gâchée</div>
+    <div class="details">2005 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANALYSE</div>
+    <div class="title">Un autre amour</div>
+    <div class="details">2005 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANIELLA</div>
+    <div class="title">Mon gaté</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANIELLA NOUKIAMA</div>
+    <div class="title">Mi chante</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANNE LISE</div>
+    <div class="title">Ne pas faire semblant</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ANNE LISE</div>
+    <div class="title">Tout beau tout nouveau</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Angéla</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Ensemb</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Fé mazine a mwin</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Fem'm kréol</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">La pa fini</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Mi chante po ou moman</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Mon l'univers</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Nous lé enkor zanfan</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Ou lé belle</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Si ton ker lé pas prêt</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Sove kalité la</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">St Paul</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">APOLONIA</div>
+    <div class="title">Zordi nou la marié</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ATEP</div>
+    <div class="title">La Réunion lé la</div>
+    <div class="details">2019 - Dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">AUBIN</div>
+    <div class="title">Kan fèt' pé vini</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">AUBIN</div>
+    <div class="title">Robert soular</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">AXEL HOARAU</div>
+    <div class="title">Moin la batte un carré</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">AXEL TONY</div>
+    <div class="title">Avec toi</div>
+    <div class="details">2016 - Pop - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">AXEL TONY</div>
+    <div class="title">Je t'aime</div>
+    <div class="details">2016 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">AXEL TONY</div>
+    <div class="title">Les feux de l'amour</div>
+    <div class="details">2016 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">B GIRLS</div>
+    <div class="title">Fier d'être kreol</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">B-GIRLS</div>
+    <div class="title">I weh</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">B-GIRLS</div>
+    <div class="title">Mon doudou</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">B-GIRLS</div>
+    <div class="title">Pchi gloo haa</div>
+    <div class="details">2017 - Kuduro</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">B-GIRLS</div>
+    <div class="title">Si t'y aim</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BARTH</div>
+    <div class="title">En premier nous</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BARTH Ft. MC BOX</div>
+    <div class="title">Antananarivo</div>
+    <div class="details">2010 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">Alon dansé</div>
+    <div class="details">1998 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">Bibizako</div>
+    <div class="details">1998 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">Black out</div>
+    <div class="details">1998 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">Gawé</div>
+    <div class="details">1998 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">In ti manzel</div>
+    <div class="details">1998 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">KANAL</div>
+    <div class="details">1998 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">La montagne</div>
+    <div class="details">1998 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">Lèr lamour</div>
+    <div class="details">1998 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">Mamzel Vodou</div>
+    <div class="details">1998 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">Mon lémé</div>
+    <div class="details">1998 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">Mon péi</div>
+    <div class="details">1998 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">Servis' kabaret</div>
+    <div class="details">1998 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER</div>
+    <div class="title">Tamarin</div>
+    <div class="details">1998 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BASTER Feat JERRY N THE RESISTANCE</div>
+    <div class="title">Touzour la po ou</div>
+    <div class="details">2010 - Séga - Duo</div>
+  </div>
+</div>
+
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BATIS</div>
+    <div class="title">Come back Jah</div>
+    <div class="details">2011 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BATIS</div>
+    <div class="title">Lès domoune kozé</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BATIS</div>
+    <div class="title">Mandozer</div>
+    <div class="details">2011 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BENJAM</div>
+    <div class="title">Madame Touby</div>
+    <div class="details">2013 - Ragga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BENJAM</div>
+    <div class="title">Nathalie Chocolat</div>
+    <div class="details">2013 - Ragga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BIHEL IVOULA</div>
+    <div class="title">Filao (version séga)</div>
+    <div class="details">2009 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BLACK AFFAIRS</div>
+    <div class="title">Aïe mama</div>
+    <div class="details">2000 - Reggae / Cadencelypso</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BLACKO</div>
+    <div class="title">I'm not rich</div>
+    <div class="details">2015 - Reggae-pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BLACKO</div>
+    <div class="title">Le temps est compté</div>
+    <div class="details">2017 - Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BLACKO & SOPRANO</div>
+    <div class="title">Ferme les yeux et imagine toi</div>
+    <div class="details">2014 - Pop - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BREDA</div>
+    <div class="title">Donne a moin du love</div>
+    <div class="details">- Ragga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BREDA</div>
+    <div class="title">Sur un nuage</div>
+    <div class="details">- Ragga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BRUNO MOOKEN</div>
+    <div class="title">Lété ek livèr</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">BRUNO VELIA</div>
+    <div class="title">16 ans</div>
+    <div class="details">2017 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CARINO</div>
+    <div class="title">Alimé difé</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CARINO</div>
+    <div class="title">Lévé vous dansé</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CARINO</div>
+    <div class="title">Mo la po kabri</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CARLO RADOU</div>
+    <div class="title">La vie ène santeur</div>
+    <div class="details">2015 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CAROL ARNAULD</div>
+    <div class="title">C'est pas facile</div>
+    <div class="details">1993 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Angelina</div>
+    <div class="details">1995 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Di pain griyé</div>
+    <div class="details">1995 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Diego</div>
+    <div class="details">1999 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Ici kot' nou été</div>
+    <div class="details">1995 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Jouny Jouna</div>
+    <div class="details">2000 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Ki to lé</div>
+    <div class="details">1995 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">La natir</div>
+    <div class="details">2000 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Le morne</div>
+    <div class="details">2002 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Liberté zom</div>
+    <div class="details">2000 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Marlène</div>
+    <div class="details">2000 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Mazine konsekanse</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Regret</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Rév' nout ancetres</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Santé zenfan</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Sépération</div>
+    <div class="details">1993 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Travayèr'</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA & Nancy Derougere</div>
+    <div class="title">Toi ek moi</div>
+    <div class="details">2004 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Voisin voisine</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CASSIYA</div>
+    <div class="title">Zoiseau</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">C'CILE</div>
+    <div class="title">Ou la décidé</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CEDRIC</div>
+    <div class="title">Le grand jour</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CEDRIC</div>
+    <div class="title">Doudou</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CEDRIC</div>
+    <div class="title">Fai pas mwin ça</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CEDRIC</div>
+    <div class="title">L'essentiel</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CEDRIC</div>
+    <div class="title">Mi dors pas</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CEDRIC</div>
+    <div class="title">Parle pa mwin</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CEDRIC</div>
+    <div class="title">Pour Jonathan</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CEDRIC</div>
+    <div class="title">Profite</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CEDRIC & KAL MALBAR</div>
+    <div class="title">Vol dan' tas</div>
+    <div class="details">2015 - Séga Dancehall - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CEDRIC & SEGA'EL</div>
+    <div class="title">Ou et Mwin</div>
+    <div class="details">2016 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CELIA DELVER</div>
+    <div class="title">Tu es libre</div>
+    <div class="details">2011 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CELINE RETORY</div>
+    <div class="title">Doucé</div>
+    <div class="details">2012 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CHIKTAY</div>
+    <div class="title">Lanmou pou vrai</div>
+    <div class="details">2013 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">CHRIS LOVARD</div>
+    <div class="title">En de braw</div>
+    <div class="details">2014 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Christelle Rosette</div>
+    <div class="title">Les couleurs de l'amour</div>
+    <div class="details">1994 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Christy</div>
+    <div class="title">La jalousie</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Christy</div>
+    <div class="title">L'amour interdit</div>
+    <div class="details">2013 - Slow Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Christy</div>
+    <div class="title">Mon zoli flèr</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Christy</div>
+    <div class="title">Nout destiné</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Christy</div>
+    <div class="title">Nout ti lambiance</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Christy</div>
+    <div class="title">Sa mon cousin</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Clara</div>
+    <div class="title">Ambiance kréol</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Clara</div>
+    <div class="title">Amouré</div>
+    <div class="details">2024 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Clara</div>
+    <div class="title">Kozmen domoune</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Clara</div>
+    <div class="title">La force l'amour</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Clara</div>
+    <div class="title">Out présence</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Clara</div>
+    <div class="title">Pêcheur lontan</div>
+    <div class="details">2023 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Clara</div>
+    <div class="title">Tourmenté</div>
+    <div class="details">2023 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Claude Robby</div>
+    <div class="title">L'amour c'est merveilleux</div>
+    <div class="details">1998 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Claudio Verraragoo</div>
+    <div class="title">Ambalaba</div>
+    <div class="details">2002 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Claudio Veeraragoo & Les Satanik</div>
+    <div class="title">Ensam ensam</div>
+    <div class="details">2003 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Clément Lauret</div>
+    <div class="title">L'intéressante</div>
+    <div class="details">1999 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Cliff Azor</div>
+    <div class="title">Ex aimé</div>
+    <div class="details">1995 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Cliff Azor</div>
+    <div class="title">Kado pou zot</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Cliff Azor</div>
+    <div class="title">Mon ti ker</div>
+    <div class="details">1996 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Cliff Azor</div>
+    <div class="title">Rendez vous d'amour</div>
+    <div class="details">1998 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Cliff Azor</div>
+    <div class="title">Ti bato</div>
+    <div class="details">1999 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Cliff Azor</div>
+    <div class="title">Valèr mon sentiment</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Collectif Métisse</div>
+    <div class="title">Laisse tomber tes problèmes</div>
+    <div class="details">2001 - Dance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Collectif Métisse</div>
+    <div class="title">Touche pas à ma fiesta</div>
+    <div class="details">2003 - Dance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Collectif Métisse</div>
+    <div class="title">Z dance</div>
+    <div class="details">2005 - Zouk dance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Compagnie Créole</div>
+    <div class="title">Au bal masqué</div>
+    <div class="details">1984 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Compagnie Créole</div>
+    <div class="title">Ba moin un ti bo</div>
+    <div class="details">1985 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Compagnie Créole</div>
+    <div class="title">Ca fait rire les oiseaux</div>
+    <div class="details">1986 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Compagnie Créole</div>
+    <div class="title">C'est bon pour le moral</div>
+    <div class="details">1987 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Compagnie Créole</div>
+    <div class="title">La bonne aventure</div>
+    <div class="details">1988 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Compagnie Créole</div>
+    <div class="title">La machine à danser</div>
+    <div class="details">1989 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Compagnie Créole</div>
+    <div class="title">Le 14 juillet</div>
+    <div class="details">1990 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Compagnie Créole</div>
+    <div class="title">Ma première biguine partie</div>
+    <div class="details">1991 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Compagnie Créole</div>
+    <div class="title">Soca party sur la plage</div>
+    <div class="details">1992 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Corneille Domitile</div>
+    <div class="title">En ce temps là</div>
+    <div class="details">1997 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Corneille Domitile</div>
+    <div class="title">Je viens de tres loin</div>
+    <div class="details">1998 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Cyrielle</div>
+    <div class="title">Mwen pa lé ayen rivéw</div>
+    <div class="details">2005 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Cyrielle</div>
+    <div class="title">Sa pran mwen tro tan</div>
+    <div class="details">2006 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Cyril Ramdoo</div>
+    <div class="title">Ran moi mo madam'</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Daisy</div>
+    <div class="title">Mon Roméo</div>
+    <div class="details">2006 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Daisy</div>
+    <div class="title">Vié toupie</div>
+    <div class="details">2007 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Damien</div>
+    <div class="title">Pou ou même</div>
+    <div class="details">2009 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dangerous</div>
+    <div class="title">Cé ou</div>
+    <div class="details">2004 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dany Drack</div>
+    <div class="title">Fami mizèr</div>
+    <div class="details">1998 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Danyel Waro</div>
+    <div class="title">Barmine</div>
+    <div class="details">2000 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Danyel Waro</div>
+    <div class="title">Galé</div>
+    <div class="details">1994 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Danyel Waro</div>
+    <div class="title">Tine blouz</div>
+    <div class="details">1995 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Darina Victry</div>
+    <div class="title">Laisse moi t'aimer</div>
+    <div class="details">2021 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Louisin</div>
+    <div class="title">In larm'</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Louisin</div>
+    <div class="title">Kaskassé</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Louisin</div>
+    <div class="title">L'amour sucré</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Louisin</div>
+    <div class="title">Nout destin</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Louisin</div>
+    <div class="title">Si ou veu bien</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Louisin</div>
+    <div class="title">Si seulement</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Louisin & Katty Martin</div>
+    <div class="title">Nulamizik</div>
+    <div class="details">2014 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Brique</div>
+    <div class="title">Lévé vous dansé</div>
+    <div class="details">2008 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Martial</div>
+    <div class="title">Célimène</div>
+    <div class="details">1975 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Philoe</div>
+    <div class="title">Vole la colombe</div>
+    <div class="details">1986 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Ramen</div>
+    <div class="title">Kolé séré</div>
+    <div class="details">2010 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">David Saman</div>
+    <div class="title">Tam tam</div>
+    <div class="details">2013 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Deborah</div>
+    <div class="title">Ene larm</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Désiré François</div>
+    <div class="title">Limanité</div>
+    <div class="details">2001 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Désiré François</div>
+    <div class="title">Ma tante</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Désiré François & Dominique Baret</div>
+    <div class="title">Kisan La po éli</div>
+    <div class="details">2006 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Deyrah</div>
+    <div class="title">Semblant</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Deyrah & Romain</div>
+    <div class="title">Lé Compliqué</div>
+    <div class="details">2021 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dezil</div>
+    <div class="title">San ou</div>
+    <div class="details">2005 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">D'Fi</div>
+    <div class="title">An nou voyagé</div>
+    <div class="details">2008 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dial's Seggae</div>
+    <div class="title">Oté patron</div>
+    <div class="details">2009 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Didier Clarel</div>
+    <div class="title">Cécilia</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Didier Clarel</div>
+    <div class="title">Trapé trapé</div>
+    <div class="details">2005 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Didier Mangaye</div>
+    <div class="title">Dans mon 404</div>
+    <div class="details">2010 - Parodie</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Didier Mangaye</div>
+    <div class="title">Le rhum de miel</div>
+    <div class="details">2011 - Parodie</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Didier Mangaye</div>
+    <div class="title">Pou ou makrel</div>
+    <div class="details">2012 - Parodie</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Djaïci</div>
+    <div class="title">Un rendez vous</div>
+    <div class="details">2020 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Volia</div>
+    <div class="title">Jamais jamais</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Volia</div>
+    <div class="title">Tel le phoenix</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">A la tienne</div>
+    <div class="details">2006 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">A l'ombre des palmiers</div>
+    <div class="details">2002 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">C'est quoi l'amour</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">Kalinanou</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">Les pays de l'oubli</div>
+    <div class="details">2002 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">Margoz amèr</div>
+    <div class="details">2007 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">Mon coeur épris</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">Perdu de vue</div>
+    <div class="details">2005 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">Pou ou mamzel</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">Si ou di oui</div>
+    <div class="details">2006 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Barret</div>
+    <div class="title">Vié zo</div>
+    <div class="details">2008 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dryce</div>
+    <div class="title">Lamour fou</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dryce</div>
+    <div class="title">Oubli a moin</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eddy Lavigny</div>
+    <div class="title">Antilliaise</div>
+    <div class="details">1996 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Edith Marc</div>
+    <div class="title">Tourment d'amour</div>
+    <div class="details">2003 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eddy Miath</div>
+    <div class="title">Ma rose</div>
+    <div class="details">2010 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eddy Miath</div>
+    <div class="title">Trop fragile</div>
+    <div class="details">2011 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eddy Lefel</div>
+    <div class="title">Trop sentimental</div>
+    <div class="details">2005 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eleeza R</div>
+    <div class="title">Tout en douceur</div>
+    <div class="details">2012 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Elliot Marianne</div>
+    <div class="title">Enn cigaret to na péna</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Elodie Marquant</div>
+    <div class="title">Tu n'as pas su</div>
+    <div class="details">2019 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emiguel</div>
+    <div class="title">Dalon macro</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emiguel</div>
+    <div class="title">Mon copain zoreil</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emiguel</div>
+    <div class="title">Sek je na pou dir'</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emiguel & Emilie Ivara</div>
+    <div class="title">Mon kafrine je y'aim'</div>
+    <div class="details">2019 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emile Naroyanin</div>
+    <div class="title">Sentiments brisés</div>
+    <div class="details">2015 - Zouk love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emiguel & Emilie Ivara</div>
+    <div class="title">Mon kafrine je y'aim'</div>
+    <div class="details">2019 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emilie Ivara</div>
+    <div class="title">Moitié moitié</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emilie Ivara</div>
+    <div class="title">Mon bononm'</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emilie Ivara</div>
+    <div class="title">Passe a twé</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emilie Ivara</div>
+    <div class="title">Poulailler</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emilie Ivara</div>
+    <div class="title">Premier pas</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emilie Ivara & Jerome Payet</div>
+    <div class="title">Mi veu reste ek ou</div>
+    <div class="details">2019 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emily Normann</div>
+    <div class="title">Une dernière nuit</div>
+    <div class="details">2014 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emmanuelle Ivara</div>
+    <div class="title">Adiboulboul</div>
+    <div class="details">2015 - Ragga-dance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emmanuelle Ivara</div>
+    <div class="title">Medley Manyan</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emmanuelle Ivara</div>
+    <div class="title">La pas oublié</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emmanuelle Ivara</div>
+    <div class="title">Mon trésor</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Emmanuelle Ivara</div>
+    <div class="title">Pense a moin</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ensembl Zot</div>
+    <div class="title">Maëva</div>
+    <div class="details">2015 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ensembl Zot</div>
+    <div class="title">Mendiant malgré lui</div>
+    <div class="details">2016 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eric Fruteau</div>
+    <div class="title">Tant que n'aura soleil</div>
+    <div class="details">2007 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eric Mahabo</div>
+    <div class="title">Beauté naturel</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eric Mahabo</div>
+    <div class="title">Rèss' kan mèm'</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eric Mahabo</div>
+    <div class="title">Ti bisou</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eric Virgal</div>
+    <div class="title">Jusqu'à la fin des temps</div>
+    <div class="details">2018 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Erika</div>
+    <div class="title">Dan mon kèr</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Erika</div>
+    <div class="title">Mon trésor</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Evodie feat Harmonie</div>
+    <div class="title">Evidence</div>
+    <div class="details">2019 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Experience 7</div>
+    <div class="title">Isabelle</div>
+    <div class="details">2003 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Experience 7</div>
+    <div class="title">Prends ma vie</div>
+    <div class="details">2004 - Slow - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Experience 7</div>
+    <div class="title">Whilfield</div>
+    <div class="details">2005 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Fabrice</div>
+    <div class="title">Mo'nn assé</div>
+    <div class="details">2009 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Face à Face</div>
+    <div class="title">Guetto</div>
+    <div class="details">2005 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Fanatik</div>
+    <div class="title">Mélina</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Fanny J</div>
+    <div class="title">Ancrée à ton port</div>
+    <div class="details">2010 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Fanny J</div>
+    <div class="title">Je l'aime</div>
+    <div class="details">2010 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Fanny J</div>
+    <div class="title">Je t'aime encore</div>
+    <div class="details">2012 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nesly & Fanny J</div>
+    <div class="title">Cordialement</div>
+    <div class="details">2015 - Zouk love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Fecat'Jy</div>
+    <div class="title">Toutouni Remix</div>
+    <div class="details">2020 - Dancehall/Shatta</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Feeling Love</div>
+    <div class="title">Passionnément</div>
+    <div class="details">2007 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Firmin Viry</div>
+    <div class="title">Valet valet</div>
+    <div class="details">1992 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">FJ</div>
+    <div class="title">Oté mon cafrine</div>
+    <div class="details">2016 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">FJ</div>
+    <div class="title">Viens viens là</div>
+    <div class="details">2016 - Zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Francky Vincent</div>
+    <div class="title">Alice ça glisse</div>
+    <div class="details">1991 - Zouk chiré</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Francky Vincent</div>
+    <div class="title">Fruit de la passion</div>
+    <div class="details">1994 - Zouk chiré</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">Alala séga</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">Chaud devant</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">Garde espoir</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">Graziella</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">Gros boite maïs</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">L'ambiance lé chaud</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">L'ambiance salègue</div>
+    <div class="details">2016 - Salègue</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">Medley</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">Mon canard lé noir</div>
+    <div class="details">2014 - Zouk chiré</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">Séga tipilipe</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Dal's</div>
+    <div class="title">Séga z'impots</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">François Noukiama</div>
+    <div class="title">Kafrine</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Françoise Payet</div>
+    <div class="title">Allé a twé</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Françoise Payet</div>
+    <div class="title">Di a mwin</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Françoise Payet & Adrien Fribourg</div>
+    <div class="title">Mon Ti Fanm</div>
+    <div class="details">2015 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Fred Espel</div>
+    <div class="title">Ti kaz en paille</div>
+    <div class="details">1999 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Fred Flavigny</div>
+    <div class="title">J'irai</div>
+    <div class="details">2008 - Slow - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Fred Flavigny</div>
+    <div class="title">Tu n'as pas de pitié</div>
+    <div class="details">2007 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Futur Crew</div>
+    <div class="title">Dans la vie</div>
+    <div class="details">2011 - R&amp;B</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Futur Crew</div>
+    <div class="title">Babylone faya</div>
+    <div class="details">2011 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Futur Crew</div>
+    <div class="title">Mon paradis</div>
+    <div class="details">2012 - Séga dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Futur Crew</div>
+    <div class="title">Pussy pussy</div>
+    <div class="details">2012 - Dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Gaby Laï Kun</div>
+    <div class="title">Mix</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Gage</div>
+    <div class="title">Viens danser</div>
+    <div class="details">2005 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Gang Myster</div>
+    <div class="title">Bougé bougé</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Gary Victor</div>
+    <div class="title">Pomper</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Foucade</div>
+    <div class="title">Boul'vard la providence</div>
+    <div class="details">1991 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Foucade</div>
+    <div class="title">Petite fleur fanée</div>
+    <div class="details">1992 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Comme l'oiseau</div>
+    <div class="details">1996 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Crazy love</div>
+    <div class="details">1995 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Je n'ose pas</div>
+    <div class="details">1997 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Je rêve trop</div>
+    <div class="details">1996 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">L'amour il faut être deux</div>
+    <div class="details">1996 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Le monde entier</div>
+    <div class="details">1995 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Les yeux de la mer</div>
+    <div class="details">1996 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Marelle</div>
+    <div class="details">1995 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Mes espérances</div>
+    <div class="details">1997 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">On fait comme les autres</div>
+    <div class="details">1996 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Petite fille</div>
+    <div class="details">1995 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Quand tu t'en iras</div>
+    <div class="details">1996 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Symphonie pour Isabelle</div>
+    <div class="details">1997 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Georges Marie Soucramanien</div>
+    <div class="title">Tous nos souvenirs</div>
+    <div class="details">1996 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Gérald Gam</div>
+    <div class="title">L'amour perdu</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Géraldine Gaze</div>
+    <div class="title">Mi té crois telment</div>
+    <div class="details">2020 - Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Gérard Bacorilal</div>
+    <div class="title">Ayo papa</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Gloria</div>
+    <div class="title">Désolé</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Goulam</div>
+    <div class="title">Laisse toi emporter</div>
+    <div class="details">2010 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Guilou</div>
+    <div class="title">Doudou pardonné</div>
+    <div class="details">2008 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Guilou</div>
+    <div class="title">Fille du soleil</div>
+    <div class="details">2009 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Guy ft Mister Prepa</div>
+    <div class="title">Bing bing</div>
+    <div class="details">2016 - Kizomba - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Gwendoline Absalon</div>
+    <div class="title">Nout' zistwar</div>
+    <div class="details">2020 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Hans</div>
+    <div class="title">Mo la mizik</div>
+    <div class="details">2014 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Harry Diboula</div>
+    <div class="title">Tu me manques</div>
+    <div class="details">2001 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Harry Payet</div>
+    <div class="title">A mon kafrine</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Harry Payet</div>
+    <div class="title">Ma vie ma triste vie</div>
+    <div class="details">2008 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Harry Payet</div>
+    <div class="title">Nina</div>
+    <div class="details">2009 - Calypso</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Harry Payet</div>
+    <div class="title">Pot pourri</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Harry Payet</div>
+    <div class="title">Pourras tu jamais me pardonner</div>
+    <div class="details">2008 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Harry Payet</div>
+    <div class="title">Prend pitié</div>
+    <div class="details">2007 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Harry Payet</div>
+    <div class="title">Samantha</div>
+    <div class="details">2008 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Harry Payet</div>
+    <div class="title">Té patron</div>
+    <div class="details">2009 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Harry Payet</div>
+    <div class="title">Tonton Bertho</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Hervé Himbert</div>
+    <div class="title">Là haut</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Hervé Himbert</div>
+    <div class="title">Fé comme ou ve</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Hervé Himbert</div>
+    <div class="title">L'amour gâché</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Hervé Himbert</div>
+    <div class="title">Medley</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Honorine</div>
+    <div class="title">Ou veu allé</div>
+    <div class="details">2019 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ino Nakeed</div>
+    <div class="title">Molmolé</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Isnel</div>
+    <div class="title">Vamos</div>
+    <div class="details">2020 - R&amp;B</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Bruno Escyle</div>
+    <div class="title">Fem'm kréol</div>
+    <div class="details">2001 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">Bravo capitaine</div>
+    <div class="details">1994 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">Dhobi de classe</div>
+    <div class="details">1996 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">Faire l'amour pas faire la guerre</div>
+    <div class="details">1998 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">La cage mama</div>
+    <div class="details">1999 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">Pisse pot</div>
+    <div class="details">2000 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">Problème cary</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">Sa qui apelle ou éna toupé</div>
+    <div class="details">1995 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">Séga nou folklore</div>
+    <div class="details">1993 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">Séga souval</div>
+    <div class="details">2002 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">Zaléka</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Claude Gaspard</div>
+    <div class="title">Ki fèr' boire kan pa capable</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. François Dalleau</div>
+    <div class="title">Ragga string</div>
+    <div class="details">2008 - Ragga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. François Dalleau</div>
+    <div class="title">Trapé trapé</div>
+    <div class="details">2007 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Louis Denis</div>
+    <div class="title">Rosabelle</div>
+    <div class="details">1995 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Marie Ragald</div>
+    <div class="title">T'écrire un roman</div>
+    <div class="details">2012 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Michel Rotin</div>
+    <div class="title">Stop</div>
+    <div class="details">1990 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Paul Bavol</div>
+    <div class="title">Gros Margot</div>
+    <div class="details">1987 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Paul Cadet</div>
+    <div class="title">Kaskavel</div>
+    <div class="details">1992 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Paul Hamilcaro</div>
+    <div class="title">Football local</div>
+    <div class="details">1996 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Paul Volnay</div>
+    <div class="title">L'assassin</div>
+    <div class="details">1995 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Paul Volnay</div>
+    <div class="title">Ammerdan</div>
+    <div class="details">1997 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Paul Volnay</div>
+    <div class="title">Madame Fin Mizo</div>
+    <div class="details">1998 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Paul Volnay</div>
+    <div class="title">Rouv' la porte la</div>
+    <div class="details">2000 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Paul Volnay</div>
+    <div class="title">Volèr vélo</div>
+    <div class="details">1999 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. René Hoareau</div>
+    <div class="title">Nathalie chocolat</div>
+    <div class="details">2002 - Ragga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Roland Miquel</div>
+    <div class="title">Kan Lé Bon, Lé Bon</div>
+    <div class="details">2007 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Roland Miquel</div>
+    <div class="title">Timide</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Roland Miquel</div>
+    <div class="title">Sainte Rose</div>
+    <div class="details">2006 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. Roland Miquel</div>
+    <div class="title">Travail Ta Gagné</div>
+    <div class="details">2005 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jacky Lechat</div>
+    <div class="title">Chacun son misère</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jacky Lechat</div>
+    <div class="title">Pour le meilleur et pour le pire</div>
+    <div class="details">2005 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jacqueline Farreyrol</div>
+    <div class="title">Mon île</div>
+    <div class="details">1980 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jacqueline Farreyrol</div>
+    <div class="title">Sa sent la banane</div>
+    <div class="details">1981 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jacqueline Farreyrol</div>
+    <div class="title">Z'enfants la misèr</div>
+    <div class="details">1982 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jah Mike</div>
+    <div class="title">Cabané</div>
+    <div class="details">2009 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">James</div>
+    <div class="title">Li vé viv la haut</div>
+    <div class="details">2008 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jean Pierre Boyer</div>
+    <div class="title">Je t'ai menti</div>
+    <div class="details">1994 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jeff Joseph</div>
+    <div class="title">Mi déba</div>
+    <div class="details">1981 - Calypso</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jérome Payet</div>
+    <div class="title">Camarade la bouteille</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jérome Payet</div>
+    <div class="title">Cé ou</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jérome Payet</div>
+    <div class="title">Ce soir enfin</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jérome Payet</div>
+    <div class="title">Mi aime a ou</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jérome Payet</div>
+    <div class="title">Tro loin de mwin</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JEROME PAYET & EMILIE IVARA</div>
+    <div class="title">Mi veu reste ek ou</div>
+    <div class="details">2018 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jessica Persee</div>
+    <div class="title">Le ying et yang</div>
+    <div class="details">2015 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jessica Persee & Zorro Chang</div>
+    <div class="title">Le ying et yang</div>
+    <div class="details">2015 - Reggae - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jessica Persee</div>
+    <div class="title">Li sèm'</div>
+    <div class="details">2016 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jessy Belleval</div>
+    <div class="title">Peut-être demain</div>
+    <div class="details">2012 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jeux de Dames</div>
+    <div class="title">Fanm fo</div>
+    <div class="details">2014 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JF Gang</div>
+    <div class="title">Réyoné</div>
+    <div class="details">2013 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jim Rama</div>
+    <div class="title">Je donnerait tout</div>
+    <div class="details">2011 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jim Rama</div>
+    <div class="title">Sandy</div>
+    <div class="details">2012 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jim Rama</div>
+    <div class="title">Touloulou</div>
+    <div class="details">2013 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jimmy Frey</div>
+    <div class="title">Une rose pour Sandra</div>
+    <div class="details">2010 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jimmy Thermea</div>
+    <div class="title">Cé elle</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jimmy Thermea</div>
+    <div class="title">Jolie créole</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jimmy Thermea</div>
+    <div class="title">Kafrine doudou</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jocelyn Deloumeaux</div>
+    <div class="title">Avec toi</div>
+    <div class="details">2014 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jocelyn Deloumeaux</div>
+    <div class="title">Dériv'</div>
+    <div class="details">2015 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jocelyn Deloumeaux</div>
+    <div class="title">Toujours toi</div>
+    <div class="details">2016 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jocelyn Perreau</div>
+    <div class="title">Ma vie ma triste vie</div>
+    <div class="details">2013 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jocelyn Sery</div>
+    <div class="title">Chante pour ton île</div>
+    <div class="details">2012 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jocelynne Labille</div>
+    <div class="title">Avant i two ta</div>
+    <div class="details">2017 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jochris</div>
+    <div class="title">Manzel</div>
+    <div class="details">2015 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOE DWET FILE</div>
+    <div class="title">4 Kampé</div>
+    <div class="details">2015 - Kompa</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOE LAURET</div>
+    <div class="title">Après tant d'année</div>
+    <div class="details">2000 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOE LAURET</div>
+    <div class="title">Casse pas la tete</div>
+    <div class="details">2002 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOE LAURET</div>
+    <div class="title">Demain je pars déjà</div>
+    <div class="details">2001 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOE LAURET</div>
+    <div class="title">Femme coméla</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOE LAURET</div>
+    <div class="title">Je rève d'un amour</div>
+    <div class="details">2000 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOE LAURET</div>
+    <div class="title">L'amour interdit</div>
+    <div class="details">2000 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOE VANY</div>
+    <div class="title">Mon rayon de soleil</div>
+    <div class="details">2005 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOE VANY</div>
+    <div class="title">Ne pars pas</div>
+    <div class="details">2006 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOEL BONALD</div>
+    <div class="title">Le kaf té y dor</div>
+    <div class="details">2010 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOEL BONALD</div>
+    <div class="title">Mon tigresse</div>
+    <div class="details">2009 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOEL BONALD</div>
+    <div class="title">San ou jamais</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOËL VIGNE</div>
+    <div class="title">Mamzelle lamour</div>
+    <div class="details">2007 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOËL VIGNE</div>
+    <div class="title">Mi veux retourne la bas</div>
+    <div class="details">2008 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOHNNY GUICHARD</div>
+    <div class="title">Aline</div>
+    <div class="details">2013 - Parodie</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOHNNY LAPORTE</div>
+    <div class="title">Mes espérances</div>
+    <div class="details">1982 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOHNY GAMARUS</div>
+    <div class="title">Mon doudou</div>
+    <div class="details">- - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOHNY GAMARUS</div>
+    <div class="title">Mon fils</div>
+    <div class="details">- - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOJOW</div>
+    <div class="title">Maloki</div>
+    <div class="details">- - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOKARY</div>
+    <div class="title">Canne mapou</div>
+    <div class="details">1967 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOKARY</div>
+    <div class="title">Rouler mon z'avirons</div>
+    <div class="details">1967 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOSE PITCHEN</div>
+    <div class="title">Bisoux bisoux</div>
+    <div class="details">- - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOSE PITCHEN</div>
+    <div class="title">Lady mélodie</div>
+    <div class="details">- - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JOSSELYNE VARANE</div>
+    <div class="title">J'ai si mal</div>
+    <div class="details">2008 - zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JSB MORNING GAME</div>
+    <div class="title">Zoli</div>
+    <div class="details">2010 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">JUAN ADOIS</div>
+    <div class="title">Puissance l'amour</div>
+    <div class="details">2012 - seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAF MALBAR</div>
+    <div class="title">Beni Tout'</div>
+    <div class="details">2007 - reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAF MALBAR</div>
+    <div class="title">Kfrine dofé</div>
+    <div class="details">2006 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAF MALBAR</div>
+    <div class="title">La vi in priyer</div>
+    <div class="details">2007 - reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAF MALBAR</div>
+    <div class="title">Mèt' ensemble</div>
+    <div class="details">2008 - dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAF MALBAR</div>
+    <div class="title">Vol dan' tas</div>
+    <div class="details">2006 - sega - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KALIPSXAU</div>
+    <div class="title">Corps à corps</div>
+    <div class="details">2015 - kizomba</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KALIPSXAU</div>
+    <div class="title">Solo</div>
+    <div class="details">2015 - kizomba</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KANEL</div>
+    <div class="title">Mon pompe vélo</div>
+    <div class="details">2007 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMELL</div>
+    <div class="title">A trop aimer d'amour</div>
+    <div class="details">2010 - zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Besoin de rien envie de toi</div>
+    <div class="details">2010 - sega - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Comment oublier</div>
+    <div class="details">2011 - sega - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Fé kom ou ve</div>
+    <div class="details">2012 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Jamais jamais</div>
+    <div class="details">2013 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Laisse moi t'aimer</div>
+    <div class="details">2014 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Le kaf té y dor</div>
+    <div class="details">2015 - seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Mèt do fé</div>
+    <div class="details">2016 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Mi nouri pa le ver</div>
+    <div class="details">2017 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Mon doudou</div>
+    <div class="details">2018 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Mon fils</div>
+    <div class="details">2019 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Mon tigresse</div>
+    <div class="details">2020 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Pour le meilleur et pour le pire</div>
+    <div class="details">2011 - sega - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">San ou jamais</div>
+    <div class="details">2021 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Son destin</div>
+    <div class="details">2022 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Tel le phoenix</div>
+    <div class="details">2023 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KARAMIX</div>
+    <div class="title">Un soir</div>
+    <div class="details">2024 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAREN & SON'J</div>
+    <div class="title">Comment oublier</div>
+    <div class="details">2011 - sega - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAREN & SON'J</div>
+    <div class="title">Lamour</div>
+    <div class="details">2012 - sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KASSAV</div>
+    <div class="title">Ou lé</div>
+    <div class="details">1984 - zouk chiré</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KASSAV</div>
+    <div class="title">Pa bizwen palé</div>
+    <div class="details">1985 - zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KASSAV</div>
+    <div class="title">Rété</div>
+    <div class="details">1986 - zouk chiré</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KASSAV</div>
+    <div class="title">Siwo</div>
+    <div class="details">1985 - zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KASSAV</div>
+    <div class="title">Syé bwa</div>
+    <div class="details">1986 - zouk ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAYA</div>
+    <div class="title">Mo la mizik</div>
+    <div class="details">1996 - seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAYA</div>
+    <div class="title">To racine pé brilé</div>
+    <div class="details">1995 - seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAYEN</div>
+    <div class="title">Donn pas doutance</div>
+    <div class="details">2008 - séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAYEN</div>
+    <div class="title">La class</div>
+    <div class="details">2009 - séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAYEN</div>
+    <div class="title">Madame Aline</div>
+    <div class="details">2007 - séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAYEN</div>
+    <div class="title">Medley</div>
+    <div class="details">2006 - séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAYEN</div>
+    <div class="title">Musicien calbanon</div>
+    <div class="details">2005 - séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAYEN</div>
+    <div class="title">Rougail sega</div>
+    <div class="details">2008 - séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAZABWA</div>
+    <div class="title">Le kaf té y dort</div>
+    <div class="details">2009 - séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAZABWA</div>
+    <div class="title">Mon tigresse</div>
+    <div class="details">2010 - seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAZABWA</div>
+    <div class="title">Pengard zéklis</div>
+    <div class="details">2011 - séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KAZABWA</div>
+    <div class="title">San ou jamais</div>
+    <div class="details">2009 - séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENAELLE</div>
+    <div class="title">Bondié</div>
+    <div class="details">2018 - ballade</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENAELLE</div>
+    <div class="title">Eclipse</div>
+    <div class="details">2020 - ballade</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENAELLE</div>
+    <div class="title">Fé viv' a mwin dan lo love</div>
+    <div class="details">2021 - ballade</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENAELLE</div>
+    <div class="title">Papillon la lampe</div>
+    <div class="details">2019 - ballade</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENEDY</div>
+    <div class="title">Cours toujours</div>
+    <div class="details">2006 - zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENEDY</div>
+    <div class="title">Enme mwen</div>
+    <div class="details">2004 - zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENT1</div>
+    <div class="title">Avoue</div>
+    <div class="details">2021 - séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENT1 &amp; TATASE</div>
+    <div class="title">Dalon</div>
+    <div class="details">2022 - seggae - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENT1 FEAT DJ M'SY</div>
+    <div class="title">Aïcha</div>
+    <div class="details">2022 - kizomba - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENT1 FEAT DJ M'SY</div>
+    <div class="title">Bob Marley</div>
+    <div class="details">2022 - reggae - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENT1 FEAT DJ M'SY</div>
+    <div class="title">Sra gayar</div>
+    <div class="details">2022 - ballade - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KENT1 X DJ M'SY</div>
+    <div class="title">Emiliana</div>
+    <div class="details">2023 - ballade - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KEVIN PAYET</div>
+    <div class="title">Maman chérie</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KEVIN PAYET</div>
+    <div class="title">Mi cherche l'amour</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KEVIN PAYET</div>
+    <div class="title">Viens dansé</div>
+    <div class="details">2023 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KILTIR</div>
+    <div class="title">In maloya lamour</div>
+    <div class="details">2020 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KIM</div>
+    <div class="title">Je peux dead</div>
+    <div class="details">2018 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KIM</div>
+    <div class="title">Mon ami</div>
+    <div class="details">2017 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KINSLEY</div>
+    <div class="title">In rasta</div>
+    <div class="details">2020 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KONSOLIDE</div>
+    <div class="title">La pli tombé</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KOZMAN TI DALON</div>
+    <div class="title">Cé mon monmon</div>
+    <div class="details">2022 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">K-REEN</div>
+    <div class="title">T'aimer encore</div>
+    <div class="details">2003 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">KVNN</div>
+    <div class="title">Cé ou</div>
+    <div class="details">2023 - Ballade</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LAURA BEG</div>
+    <div class="title">Allélouya</div>
+    <div class="details">2015 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LAURA BEG</div>
+    <div class="title">Enn lot kuma mwa</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LAURA BEG</div>
+    <div class="title">Le roi ladi lafé</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LAURA BEG</div>
+    <div class="title">L'immensité l'amour</div>
+    <div class="details">2010 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LAURA BEG</div>
+    <div class="title">Tik tiké</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LAURENT ROSELLI</div>
+    <div class="title">Poukoué papa</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LAYANAH</div>
+    <div class="title">Je t'aime trop</div>
+    <div class="details">2017 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LEA CHURROS</div>
+    <div class="title">Laisse toi aller</div>
+    <div class="details">2021 - Kizomba</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LEA CHURROS</div>
+    <div class="title">Suis-moi</div>
+    <div class="details">2021 - Kizomba</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LEA CHURROS & Magical Nrick</div>
+    <div class="title">Succomber</div>
+    <div class="details">2022 - Kizomba - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">LEA CHURROS & VARAINE BEN</div>
+    <div class="title">Bébé</div>
+    <div class="details">2023 - Kizomba - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Les Deesses</div>
+    <div class="title">On a changé</div>
+    <div class="details">2016 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Les Vautours</div>
+    <div class="title">Premier lamour</div>
+    <div class="details">2014 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lin & Otentik Groove</div>
+    <div class="title">Léker ti baté</div>
+    <div class="details">2015 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lin & Groove</div>
+    <div class="title">C twa mo récompans</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Otentik Groove & Jason Hee</div>
+    <div class="title">Kifèr to palé dansé</div>
+    <div class="details">2017 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Linzy Bacbot</div>
+    <div class="title">Elle pleure</div>
+    <div class="details">2013 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Linzy Bacbot & Elijah</div>
+    <div class="title">Mootia</div>
+    <div class="details">2018 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Luc Donat</div>
+    <div class="title">Blanche et noir</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lovenn'</div>
+    <div class="title">Ma demande</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Luc Léandry</div>
+    <div class="title">Bien glacé</div>
+    <div class="details">1998 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lucie</div>
+    <div class="title">Dan out bras</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lucie</div>
+    <div class="title">Veill' si li</div>
+    <div class="details">2020 - Ballade</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lucyana</div>
+    <div class="title">Moin la pas merite</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lucyana</div>
+    <div class="title">Ou lé pu comme avant</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lumière</div>
+    <div class="title">Balayé balayé</div>
+    <div class="details">2009 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lumière</div>
+    <div class="title">Mon sentiment</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lumière</div>
+    <div class="title">Ou mank a moin</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lumière</div>
+    <div class="title">Ti pêcheur</div>
+    <div class="details">2008 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Lynnsha Tina</div>
+    <div class="title">Pani tan</div>
+    <div class="details">2022 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Madii Madii</div>
+    <div class="title">Chérie</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Madii Madii</div>
+    <div class="title">Si ou les</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Maéva</div>
+    <div class="title">Nou lé pa la ek sa</div>
+    <div class="details">2016 - Dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Magic System</div>
+    <div class="title">1er gaou</div>
+    <div class="details">1999 - Coupé Décalé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Magic System</div>
+    <div class="title">Ambiance à l'africaine</div>
+    <div class="details">2003 - Dance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Magic System</div>
+    <div class="title">Bouger bouger</div>
+    <div class="details">2005 - Coupé Décalé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Magic System</div>
+    <div class="title">C cho ça brûle</div>
+    <div class="details">2006 - Coupé Décalé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Magic System</div>
+    <div class="title">Chérie coco</div>
+    <div class="details">2009 - Dance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Magic System</div>
+    <div class="title">La danse des magiciens</div>
+    <div class="details">2001 - Dance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Magic System</div>
+    <div class="title">Même pas fatigués</div>
+    <div class="details">2008 - Dance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Magic System</div>
+    <div class="title">Sweet Fanta Diallo</div>
+    <div class="details">2001 - Coupé Décalé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Magic System</div>
+    <div class="title">Tango tango</div>
+    <div class="details">2001 - Coupé Décalé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Maiko</div>
+    <div class="title">Madame</div>
+    <div class="details">2020 - Kompa</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Maiko</div>
+    <div class="title">Ti bisou</div>
+    <div class="details">2021 - Kompa</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Makassy</div>
+    <div class="title">Doucement</div>
+    <div class="details">2012 - Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Malavoi</div>
+    <div class="title">La case à Lucie</div>
+    <div class="details">1983 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Malkijah</div>
+    <div class="title">Babylove</div>
+    <div class="details">2011 - Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mamo</div>
+    <div class="title">Douleur maloya</div>
+    <div class="details">2020 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mamo</div>
+    <div class="title">Jalousi</div>
+    <div class="details">2022 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mamo</div>
+    <div class="title">Kafrine de miel</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Manu KDE</div>
+    <div class="title">Viv' nout l'amour</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Max Lauret & Manu KDE</div>
+    <div class="title">Mon vieux papa</div>
+    <div class="details">2013 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Manyan</div>
+    <div class="title">Commérage ménage</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Manyan</div>
+    <div class="title">Mon cauchemar</div>
+    <div class="details">2012 - Ballade</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Manyan</div>
+    <div class="title">Oh Nénère</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Manyan</div>
+    <div class="title">Séga fité</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Manyan</div>
+    <div class="title">Tracas Joseph</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Maperine</div>
+    <div class="title">L'amour maternel</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Maperine</div>
+    <div class="title">Maperine</div>
+    <div class="details">2016 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marcelino</div>
+    <div class="title">Bonzour madame</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marcelino</div>
+    <div class="title">Viv' nou lamour</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marie-Armande Moutou</div>
+    <div class="title">Toi qui pars</div>
+    <div class="details">1995 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marie-Jacqueline Moutou</div>
+    <div class="title">Roule ton maloya</div>
+    <div class="details">2003 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marina Ursull</div>
+    <div class="title">Appelle-moi ce soir</div>
+    <div class="details">1997 - Zouk Love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marina Ursull</div>
+    <div class="title">Passe me voir</div>
+    <div class="details">1997 - Zouk Love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mario Chico</div>
+    <div class="title">Derrière mon piano</div>
+    <div class="details">2004 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mario Chico</div>
+    <div class="title">Fragile</div>
+    <div class="details">2006 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mario Chico</div>
+    <div class="title">Je l'aime</div>
+    <div class="details">2004 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mario Chico</div>
+    <div class="title">Mon seul rêve</div>
+    <div class="details">2005 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mario Chico</div>
+    <div class="title">Petite fille</div>
+    <div class="details">2003 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mario Chico</div>
+    <div class="title">Si sé kon sa</div>
+    <div class="details">2006 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mario Chico</div>
+    <div class="title">Tu es ma chanson</div>
+    <div class="details">2005 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mario Chico</div>
+    <div class="title">Viens</div>
+    <div class="details">2007 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Maroner</div>
+    <div class="title">Moque en tole</div>
+    <div class="details">2009 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mars Tou Sel</div>
+    <div class="title">Jessica</div>
+    <div class="details">2008 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mars Tou Sel</div>
+    <div class="title">Oh la bec canard</div>
+    <div class="details">2008 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mars Tou Sel</div>
+    <div class="title">Mon voisin</div>
+    <div class="details">2009 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mars Tou Sel</div>
+    <div class="title">Sorcier ma pa peur</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mars Tou Sel</div>
+    <div class="title">Ti mal parle</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marshall feat DJ Mimi</div>
+    <div class="title">Oublier</div>
+    <div class="details">2016 - Kizomba - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Martial</div>
+    <div class="title">La case coco</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Martial</div>
+    <div class="title">Sentiment kèr</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marvin</div>
+    <div class="title">Amour sans loi</div>
+    <div class="details">2002 - Zouk love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marvin</div>
+    <div class="title">Coup de soleil</div>
+    <div class="details">2004 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marvin</div>
+    <div class="title">Je t'ai dans la peau</div>
+    <div class="details">2005 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Marvin</div>
+    <div class="title">Plus fort que tout</div>
+    <div class="details">2003 - Zouk love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mary Jane Gaspard</div>
+    <div class="title">Défoulé</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mary Jane Gaspard</div>
+    <div class="title">Ou bon mamzel</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mary Jane Gaspard</div>
+    <div class="title">Toupi</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Master KG</div>
+    <div class="title">Jerusalema</div>
+    <div class="details">2019 - Afro house</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Matt Brooklyn</div>
+    <div class="title">Rastaman lé la</div>
+    <div class="details">2021 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Matt Houston</div>
+    <div class="title">Positif</div>
+    <div class="details">2003 - Ragga ambiance</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Max Antoine Grondin</div>
+    <div class="title">Je t'aime aussi pour ça</div>
+    <div class="details">2010 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Max Antoine Grondin</div>
+    <div class="title">Rougail saucisse</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Max Lauret</div>
+    <div class="title">Fanny Fanny</div>
+    <div class="details">Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Max Lauret</div>
+    <div class="title">Marie Hélène</div>
+    <div class="details">Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Max Lauret & Manu KDE</div>
+    <div class="title">Mon vieux papa</div>
+    <div class="details">Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Maxime Laope</div>
+    <div class="title">La rosée tombée</div>
+    <div class="details">Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Maximin Boyer</div>
+    <div class="title">Nou té sava dan la rivyèr</div>
+    <div class="details">Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">M Baba</div>
+    <div class="title">Winé</div>
+    <div class="details">Dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">MC Box</div>
+    <div class="title">Dernier message</div>
+    <div class="details">2024 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Meddy Gerville</div>
+    <div class="title">Rèss' la mèm'</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice & Clarel Armel</div>
+    <div class="title">Angui la kordé</div>
+    <div class="details">2022 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice & Warren Permal</div>
+    <div class="title">Gaté</div>
+    <div class="details">2022 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice & Warren Permal</div>
+    <div class="title">Gaté 2</div>
+    <div class="details">2022 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice</div>
+    <div class="title">Kadans mon sega</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice</div>
+    <div class="title">Lamour lé dou</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice</div>
+    <div class="title">Mangue koulé</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice</div>
+    <div class="title">Medley lambians mauricien</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice</div>
+    <div class="title">Medley l'ambiance mauricien N°2</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice</div>
+    <div class="title">Mon Secret</div>
+    <div class="details">2021</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice</div>
+    <div class="title">Mon Secret (vs séga)</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice</div>
+    <div class="title">Prisonnière</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mederice</div>
+    <div class="title">Sega mon passion</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Medhy Custos</div>
+    <div class="title">A jamais</div>
+    <div class="details">2020 - Zouk love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Medi & Franzi</div>
+    <div class="title">Raloder</div>
+    <div class="details">2003 - Ragga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Medley Seggae Lontan</div>
+    <div class="title">Medley Seggae Lontan</div>
+    <div class="details">Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Meiitod</div>
+    <div class="title">Sablier</div>
+    <div class="details">2022 - Kompa</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Melanz' Nasyon</div>
+    <div class="title">Isi la Rényon</div>
+    <div class="details">2019 - Maloya - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Meta</div>
+    <div class="title">Mon kafrine adoré</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Meta</div>
+    <div class="title">Lèss' a zot kozé</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Metiss'</div>
+    <div class="title">La koulèr' nout' po</div>
+    <div class="details">2020 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Metys</div>
+    <div class="title">En mode kèr</div>
+    <div class="details">2019 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Metys</div>
+    <div class="title">Remarquable</div>
+    <div class="details">2020 - Kizomba</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Miane</div>
+    <div class="title">Voisin</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Miane (Fami Melody)</div>
+    <div class="title">Nout dé ansanm</div>
+    <div class="details">2020 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Michael Clency</div>
+    <div class="title">Marilène</div>
+    <div class="details">2020 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Michel Adelaïd</div>
+    <div class="title">Pied' riz</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Michel Admette</div>
+    <div class="title">Mi nouri pa le ver</div>
+    <div class="details">1996 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Michel Admette</div>
+    <div class="title">Route en corniche</div>
+    <div class="details">1994 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Micheline Picot</div>
+    <div class="title">Zenfant les hauts</div>
+    <div class="details">1982 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Michou</div>
+    <div class="title">Mam'zelle Paula</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mickaël Pouvin</div>
+    <div class="title">Ainsi soit-il</div>
+    <div class="details">2015 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mickaël Pouvin</div>
+    <div class="title">C'est comme ça</div>
+    <div class="details">2016 - Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mickaël Pouvin</div>
+    <div class="title">Dans les nuages</div>
+    <div class="details">2019 - Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mickaël Pouvin</div>
+    <div class="title">Eternel</div>
+    <div class="details">2018 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mickaël Pouvin</div>
+    <div class="title">Grace à vous</div>
+    <div class="details">2020 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mickaël Pouvin & Jérôme Clerville</div>
+    <div class="title">Près des étoiles</div>
+    <div class="details">2021 - Slow - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mighty Ki La</div>
+    <div class="title">Régine</div>
+    <div class="details">2014 - Dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mikl</div>
+    <div class="title">À la folie</div>
+    <div class="details">2019 - Kizomba</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mikl</div>
+    <div class="title">On a changé</div>
+    <div class="details">2020 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mikl & Maureen</div>
+    <div class="title">Tkt pas</div>
+    <div class="details">2021 - Kizomba - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Milca</div>
+    <div class="title">Que des mots</div>
+    <div class="details">2007 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Milca</div>
+    <div class="title">Simplement</div>
+    <div class="details">2006 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mirage</div>
+    <div class="title">Kan ou lé loin</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mirage</div>
+    <div class="title">Ou même</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mirage</div>
+    <div class="title">Si ou lé coté moin</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mirage</div>
+    <div class="title">Ti kaz lontan</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Misiz</div>
+    <div class="title">Alon fé la fèt</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Misiz</div>
+    <div class="title">Gayar zot néna</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Misiz</div>
+    <div class="title">Ou sa ou ve</div>
+    <div class="details">2014 - Ragga dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Misiz</div>
+    <div class="title">Pardon</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Misiz</div>
+    <div class="title">Un bisou</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">A cause d'une autre</div>
+    <div class="details">2021 - Zouk love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Bal la kour</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Chéri je t'aime</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Code mon kèr'</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Doux et amer</div>
+    <div class="details">2023 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Fanm Missty</div>
+    <div class="details">2023 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">L'amour intense</div>
+    <div class="details">2023 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Medley pei</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Mi nouri pa le ver</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Mon doudou</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Mon ti kaf</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Nouveau départ</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Papa pésèr'</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Si un jour</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Tanguer</div>
+    <div class="details">2024 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Ti fami</div>
+    <div class="details">2023 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Trop po payé</div>
+    <div class="details">2024 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Vilain manière</div>
+    <div class="details">2023 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Missty</div>
+    <div class="title">Zétwal dan cièl</div>
+    <div class="details"></div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mister Lolo</div>
+    <div class="title">Rèst la</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Morgan</div>
+    <div class="title">Cherry</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Morgan</div>
+    <div class="title">Cou d'pié</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Morgan</div>
+    <div class="title">Dans son kèr</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Morgan</div>
+    <div class="title">Kat pat en ler</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Morgan</div>
+    <div class="title">Kèr dehors</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Morgan</div>
+    <div class="title">La tête poisson</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Morgan</div>
+    <div class="title">Medley Marcel</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Morgan</div>
+    <div class="title">Moukate</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Morgan & Aniella</div>
+    <div class="title">Rode pu moin</div>
+    <div class="details">2021 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Sista Flo & Morgan</div>
+    <div class="title">Surpriz mènaz</div>
+    <div class="details">2021 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Morgan</div>
+    <div class="title">Un calin</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mouvance</div>
+    <div class="title">Lettre</div>
+    <div class="details">2010 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mr Love</div>
+    <div class="title">L'espoir</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mr Love</div>
+    <div class="title">Mo paradise</div>
+    <div class="details">2013 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mr Love</div>
+    <div class="title">Rann mwa fou</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Msylirik</div>
+    <div class="title">Craqué</div>
+    <div class="details">2016 - Ragga-dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mystik Evolution</div>
+    <div class="title">Danzé</div>
+    <div class="details">2008 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mystik Evolution</div>
+    <div class="title">La natir</div>
+    <div class="details">2009 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mystik Evolution</div>
+    <div class="title">L'amour arc en ciel</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mystik Evolution</div>
+    <div class="title">Mo l'amouré</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mystik Evolution</div>
+    <div class="title">Pa fèr semblant</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mystik Evolution</div>
+    <div class="title">Tann dire</div>
+    <div class="details">2013 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mystik Evolution</div>
+    <div class="title">Toi ki to été toi</div>
+    <div class="details">2014 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mystik Evolution</div>
+    <div class="title">Unité</div>
+    <div class="details">2015 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nadine Veerasamy</div>
+    <div class="title">Voler lo zom</div>
+    <div class="details">2004 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Naessaye</div>
+    <div class="title">Bèl sèr</div>
+    <div class="details">2016 - Seggae - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Naessaye</div>
+    <div class="title">Naèsayé</div>
+    <div class="details">2015 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Naessaye</div>
+    <div class="title">Ote la ser</div>
+    <div class="details">2017 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Naessaye</div>
+    <div class="title">Tape pa ton tantine</div>
+    <div class="details">2016 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Naessaye</div>
+    <div class="title">Tro de bla bla</div>
+    <div class="details">2018 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Naessaye</div>
+    <div class="title">Viens gouté</div>
+    <div class="details">2019 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nas Black</div>
+    <div class="title">Karma</div>
+    <div class="details">2021 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nas Black</div>
+    <div class="title">Ladilafé</div>
+    <div class="details">2020 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Natty Dread</div>
+    <div class="title">Zarboutan</div>
+    <div class="details">2007 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Natty Jah</div>
+    <div class="title">Sitolé</div>
+    <div class="details">2011 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Natty Jah</div>
+    <div class="title">Vanité</div>
+    <div class="details">2013 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nesly</div>
+    <div class="title">Besoin d'amour</div>
+    <div class="details">2012 - Zouk Love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nicaise Lartin</div>
+    <div class="title">Destrukter, malféter</div>
+    <div class="details">2019 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nichols</div>
+    <div class="title">Je t'adore</div>
+    <div class="details">2007 - Zouk Love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nichols</div>
+    <div class="title">Kerinha</div>
+    <div class="details">2009 - Zouk Love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nicole Dambreville</div>
+    <div class="title">Exil</div>
+    <div class="details">2002 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Niz'</div>
+    <div class="title">Réunionnaise</div>
+    <div class="details">2016 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">N'Jie</div>
+    <div class="title">Chui chui chui</div>
+    <div class="details">2013 - Zouk Love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">N'Jie</div>
+    <div class="title">Prince charmant</div>
+    <div class="details">2015 - Zouk Love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Noella</div>
+    <div class="title">Reconnaissance</div>
+    <div class="details">2012 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nomads</div>
+    <div class="title">Pou l’anmou</div>
+    <div class="details">2009 - Zouk Love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nout' Racine</div>
+    <div class="title">Fou dehor</div>
+    <div class="details">2014 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nout Racine</div>
+    <div class="title">Hypocrite</div>
+    <div class="details">2016 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nouvel Air</div>
+    <div class="title">Mon bonheur</div>
+    <div class="details">2011 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nova</div>
+    <div class="title">Le crépuscule des amants</div>
+    <div class="details">2008 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nova</div>
+    <div class="title">Le jardin des souvenirs</div>
+    <div class="details">2010 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nova</div>
+    <div class="title">Objectif séduction</div>
+    <div class="details">2012 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olive</div>
+    <div class="title">Largue a moin</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Araste</div>
+    <div class="title">Fo larguer</div>
+    <div class="details">2015 - Salègue</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Chéridou</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">À ou même</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Au azar</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">C’est ou</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Discontinue</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">I love you</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Komié tan</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Ma lady</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Mi na le love</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Mo la po kabri</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Mo lamour</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Mo pas pou recommencé</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Mon sèl rézon</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Mo system</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Patati patata</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique</div>
+    <div class="title">Souvenir</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olivier Brique feat Médérice</div>
+    <div class="title">Kan ou té koté mwin</div>
+    <div class="details">2020 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Patrick Brunet</div>
+    <div class="title">L'amour éternel</div>
+    <div class="details">2010 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Patrick Persee</div>
+    <div class="title">Bois de l'eau</div>
+    <div class="details">2016 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Patrick Rafougilet</div>
+    <div class="title">Nout patrimoine</div>
+    <div class="details">2013 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Patrick Victor</div>
+    <div class="title">Retourn Praslin</div>
+    <div class="details">2004 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Perle Lama</div>
+    <div class="title">Aime moi plus fort</div>
+    <div class="details">2002 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Perle Lama</div>
+    <div class="title">Emmène-moi avec toi</div>
+    <div class="details">2005 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Perle Lama</div>
+    <div class="title">Sweet time</div>
+    <div class="details">2003 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Philip Metura</div>
+    <div class="title">Maria Perfecta</div>
+    <div class="details">2009 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Philippe Louis Jean</div>
+    <div class="title">Amour</div>
+    <div class="details">2011 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Picarella Claudio</div>
+    <div class="title">Elle est entrée un jour dans ma vie</div>
+    <div class="details">2014 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Pierre Roselli</div>
+    <div class="title">Lamba blanc</div>
+    <div class="details">2002 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Pierre Roselli</div>
+    <div class="title">Laurence</div>
+    <div class="details">2004 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Pierre Roselli</div>
+    <div class="title">Marylou</div>
+    <div class="details">2003 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Pierre Roselli</div>
+    <div class="title">Reste encore</div>
+    <div class="details">2005 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Pierre Vidot</div>
+    <div class="title">Toué lé jolie</div>
+    <div class="details">2010 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Pierre Vidot</div>
+    <div class="title">Ti paille en queue</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PIX'L</div>
+    <div class="title">Alé aou</div>
+    <div class="details">2015 - Reggae-pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PIX'L</div>
+    <div class="title">Elle attend</div>
+    <div class="details">2016 - Reggae-pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PLL</div>
+    <div class="title">Le secret</div>
+    <div class="details">2014 - Kompa</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PLL</div>
+    <div class="title">Linteressant</div>
+    <div class="details">2014 - Dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PLL</div>
+    <div class="title">Medley</div>
+    <div class="details">2014 - Dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">POP EXPERIENCE</div>
+    <div class="title">Arète avec sa</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PRICILLIA</div>
+    <div class="title">Avec toi</div>
+    <div class="details">2018 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PRINCESS LOVER</div>
+    <div class="title">Aujourd'hui</div>
+    <div class="details">2010 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PRINCESS LOVER</div>
+    <div class="title">Mon soleil</div>
+    <div class="details">2010 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PROGRESSION</div>
+    <div class="title">Fanm' maline</div>
+    <div class="details">2013 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PROGRESSION</div>
+    <div class="title">Kamarade Tintin</div>
+    <div class="details">2013 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PROGRESSION</div>
+    <div class="title">Le malogué</div>
+    <div class="details">2013 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PROGRESSION</div>
+    <div class="title">Mon bato</div>
+    <div class="details">2013 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PROGRESSION</div>
+    <div class="title">Progression</div>
+    <div class="details">2013 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PROGRESSION</div>
+    <div class="title">Sourire empoizoné</div>
+    <div class="details">2013 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PROGRESSION</div>
+    <div class="title">Ti boug' enkor</div>
+    <div class="details">2013 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PUISSANCE 8</div>
+    <div class="title">Accusé levez-vous</div>
+    <div class="details">2008 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PUISSANCE 8</div>
+    <div class="title">Le téléphone</div>
+    <div class="details">2008 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PUISSANCE 8</div>
+    <div class="title">Ma maitresse d'école</div>
+    <div class="details">2008 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PUISSANCE 8</div>
+    <div class="title">Pitié méssieurs les jurés</div>
+    <div class="details">2008 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">PUISSANCE 8</div>
+    <div class="title">Solange</div>
+    <div class="details">2008 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RACINE DES ILES</div>
+    <div class="title">Fanm'</div>
+    <div class="details">2012 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RACINE DES ILES</div>
+    <div class="title">I gueri pa (Mathilda)</div>
+    <div class="details">2012 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RACINE DES ILES</div>
+    <div class="title">Lédikasion</div>
+    <div class="details">2012 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RACINE DES ÎLES</div>
+    <div class="title">Moin lé la mêm</div>
+    <div class="details">2012 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RACINE TATANE</div>
+    <div class="title">Kikalité mo frèr</div>
+    <div class="details">2010 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RADIA SEGA</div>
+    <div class="title">La fête</div>
+    <div class="details">2008 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Radia Séga</div>
+    <div class="title">Jolie kafrine lamour</div>
+    <div class="details">2008 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RALPH THAMAR</div>
+    <div class="title">Exil</div>
+    <div class="details">2009 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RALPH THAMAR</div>
+    <div class="title">Polisson</div>
+    <div class="details">2009 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RAS NATTY BABY</div>
+    <div class="title">Jah vivant</div>
+    <div class="details">2015 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RAS NATTY BABY</div>
+    <div class="title">Lévé mo pep</div>
+    <div class="details">2015 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RAS NATTY BABY</div>
+    <div class="title">Mwa enn ti mazambik live</div>
+    <div class="details">2015 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RAS NATTY BABY</div>
+    <div class="title">Nouvel vision</div>
+    <div class="details">2015 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RAS NATTY BABY</div>
+    <div class="title">Rastafari</div>
+    <div class="details">2015 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RAS NATTY BABY</div>
+    <div class="title">Tout va mal</div>
+    <div class="details">2015 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">REAL LIMIT</div>
+    <div class="title">Bay</div>
+    <div class="details">2010 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">REAL SEGA</div>
+    <div class="title">Mi ve bien</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RODDEE COX</div>
+    <div class="title">Réuyoné</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RYAN feat MIRELLA</div>
+    <div class="title">L'univers</div>
+    <div class="details">2014 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RUDY S</div>
+    <div class="title">Fleur des îles</div>
+    <div class="details">2011 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">RUDY S</div>
+    <div class="title">Love love love</div>
+    <div class="details">2011 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SAFARI</div>
+    <div class="title">Fé confiance en moin</div>
+    <div class="details">2010 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SAFARI</div>
+    <div class="title">Sirop blanc</div>
+    <div class="details">2009 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SANDRA MAYOTTE</div>
+    <div class="title">Kayambo</div>
+    <div class="details">2001 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SANDY COOPS</div>
+    <div class="title">Oussa mi vive</div>
+    <div class="details">2013 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEBBY</div>
+    <div class="title">Ziss Toi</div>
+    <div class="details">2014 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SECTEUR 410</div>
+    <div class="title">Don' a li</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SECTEUR 410</div>
+    <div class="title">Granmèr'</div>
+    <div class="details">2015 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SECTEUR 410</div>
+    <div class="title">Héritaz'</div>
+    <div class="details">2016 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Bénédiction</div>
+    <div class="details">2017 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Bondié i dort pa</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">En lèr'</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Frinka</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Jaloux</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Kèr attaché</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Koz' sur moin</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Mi rèv'</div>
+    <div class="details">2020 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Mon loulou</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Retrouve a ou</div>
+    <div class="details">2021 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Si ou y'aim' a mwin enkor</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Si seulement</div>
+    <div class="details">2018 - Kompa</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Trakass pa pou moin</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL</div>
+    <div class="title">Travay pou gagné</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SEGA'EL & CEDRIC</div>
+    <div class="title">Ou et Mwin</div>
+    <div class="details">2020 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">STELIO</div>
+    <div class="title">Célina</div>
+    <div class="details">2002 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SELIO</div>
+    <div class="title">Mon soleil</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SELIO</div>
+    <div class="title">Relev a ou</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SHAÏNA</div>
+    <div class="title">Ti fleur fanè</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SIANA</div>
+    <div class="title">Diamant</div>
+    <div class="details">2016 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SIKA RLION & MARSHALL</div>
+    <div class="title">Galet</div>
+    <div class="details">2022 - Reggae - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SISTA FLO</div>
+    <div class="title">Bien faux</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SISTA FLO</div>
+    <div class="title">Limièr</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SISTA FLO</div>
+    <div class="title">Mi laisse a ou aller</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SISTA FLO</div>
+    <div class="title">Po ou momon</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SISTA FLO & MORGAN</div>
+    <div class="title">Surpriz mènaz</div>
+    <div class="details">2018 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SISTA FLO</div>
+    <div class="title">Mi vé croire</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SISTA LOVA & TATASE</div>
+    <div class="title">Kel trin</div>
+    <div class="details">2016 - Ragga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SKY TO BE</div>
+    <div class="title">Billet 2000</div>
+    <div class="details">2014 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SKY TO BE</div>
+    <div class="title">Dodo baba</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SKY TO BE</div>
+    <div class="title">Longanis</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SKY TO BE</div>
+    <div class="title">Mo demande toi pardon</div>
+    <div class="details">2015 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SKY TO BE</div>
+    <div class="title">Ti koté ti koté</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SLAÏ</div>
+    <div class="title">Flamme</div>
+    <div class="details">2004 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SLOW DES ANTILLES</div>
+    <div class="title">Adieu mon rêve</div>
+    <div class="details">1992 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SLOW DES ANTILLES</div>
+    <div class="title">La maison sur le port</div>
+    <div class="details">1990 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SLOW DES ANTILLES</div>
+    <div class="title">Prends ma vie</div>
+    <div class="details">1994 - Slow - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">SLOW DES ANTILLES</div>
+    <div class="title">Un mari, un amant, un ami</div>
+    <div class="details">1991 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Sonia Dersion</div>
+    <div class="title">Natirel</div>
+    <div class="details">2008 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Sophie Ligdamis</div>
+    <div class="title">Lambians lé bon</div>
+    <div class="details">2022 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Soumia</div>
+    <div class="title">Rendez moi</div>
+    <div class="details">2001 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Soumia</div>
+    <div class="title">Trahison</div>
+    <div class="details">2004 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Stéphanie Thazar</div>
+    <div class="title">Je veux te connaître</div>
+    <div class="details">2010 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Stéphanie Thazar</div>
+    <div class="title">Mon vibe</div>
+    <div class="details">2020 - Ragga-dancehall</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Stéphanie Thazar</div>
+    <div class="title">Rénioné Caméléon</div>
+    <div class="details">2018 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Stéphanie Thazar</div>
+    <div class="title">Ti cœur</div>
+    <div class="details">2016 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Stéphanie Thazar, Iza, Natacha Tortillard, Yaelle Trules</div>
+    <div class="title">In jour, in vi</div>
+    <div class="details">2020 - Kadence - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Steve Brunet</div>
+    <div class="title">Ti madame la</div>
+    <div class="details">2018 - Sega - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Steven Morris</div>
+    <div class="title">Peine et joie</div>
+    <div class="details">2016 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Stony</div>
+    <div class="title">Dança kizomba</div>
+    <div class="details">2013 - Kizomba</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Sylvain Kaleecharan</div>
+    <div class="title">Katyink katyink</div>
+    <div class="details">2005 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Sylvio Lynx</div>
+    <div class="title">Le rhum na pa bon mèm</div>
+    <div class="details">2017 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">T Matt</div>
+    <div class="title">Ce soir</div>
+    <div class="details">2020 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">T Matt</div>
+    <div class="title">Reste encore</div>
+    <div class="details">2020 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tam Tam 2000</div>
+    <div class="title">Ti chérie</div>
+    <div class="details">1998 - Zouk chiré</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tatiana Gaze</div>
+    <div class="title">Mon décision</div>
+    <div class="details">2011 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tessa</div>
+    <div class="title">A toi</div>
+    <div class="details">2018 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tessa</div>
+    <div class="title">Assez</div>
+    <div class="details">2018 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tessa</div>
+    <div class="title">Ca glisse</div>
+    <div class="details">2018 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tessa</div>
+    <div class="title">C'est mon histoire</div>
+    <div class="details">2018 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tessa</div>
+    <div class="title">La jalousie</div>
+    <div class="details">2018 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tessa</div>
+    <div class="title">Moitié</div>
+    <div class="details">2018 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tessa</div>
+    <div class="title">Rienk lamour</div>
+    <div class="details">2018 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tessa</div>
+    <div class="title">Valèr mon sentiment</div>
+    <div class="details">2018 - Sega</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">The Prophecy</div>
+    <div class="title">Laglwar</div>
+    <div class="details">2014 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Thierry Cham</div>
+    <div class="title">J'ai compris</div>
+    <div class="details">2003 - Zouk love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Thierry Cham</div>
+    <div class="title">Océan</div>
+    <div class="details">2000 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Thierry Gaurilis</div>
+    <div class="title">Alon dansé</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Thierry Gaurilis</div>
+    <div class="title">Inn ti mamzel</div>
+    <div class="details">2021 - Slow</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Thierry Gaurilis</div>
+    <div class="title">Servis' kabaré</div>
+    <div class="details">2021 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Thierry Gaurilis</div>
+    <div class="title">Tamarin</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ti Barth</div>
+    <div class="title">Brill'hé séga</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ti Fock</div>
+    <div class="title">Doker</div>
+    <div class="details">2004 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ti Mark</div>
+    <div class="title">Zistwar kompliké</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ti Prince</div>
+    <div class="title">Po di mersy</div>
+    <div class="details">2021 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ti Sours</div>
+    <div class="title">Kafrine</div>
+    <div class="details">2020 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ti Sours</div>
+    <div class="title">Le tan po di</div>
+    <div class="details">2020 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tian</div>
+    <div class="title">Mama dolores'</div>
+    <div class="details">2022 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tian Corentin</div>
+    <div class="title">Perdition</div>
+    <div class="details">2023 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tiana</div>
+    <div class="title">Laisse pas moin la</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tiken Jah Fakoly</div>
+    <div class="title">Plus rien ne m'étonne</div>
+    <div class="details">2007 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tina Richard Cave</div>
+    <div class="title">A tes côtés</div>
+    <div class="details">2015 - Zouk love - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tina Richard Cave</div>
+    <div class="title">Je t'aime quand même</div>
+    <div class="details">2015 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tivic</div>
+    <div class="title">Mi love</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tivic</div>
+    <div class="title">Pa gagne le temps</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Toulou</div>
+    <div class="title">Capaye</div>
+    <div class="details">2017 - Seggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Toulou</div>
+    <div class="title">Compt dessi</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Toulou</div>
+    <div class="title">Doudou chérie</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Toulou</div>
+    <div class="title">Princesse</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Toulou</div>
+    <div class="title">Tout essayer</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Toulou</div>
+    <div class="title">Wyné wyné</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Toulou feat Colette</div>
+    <div class="title">Envahi mon pensé</div>
+    <div class="details">2017 - Séga - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Tyinbo</div>
+    <div class="title">Sa lé pa conten</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Vanessa</div>
+    <div class="title">Envoy mon séga</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Vayb</div>
+    <div class="title">Lanmou fasil</div>
+    <div class="details">2018 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Victor O</div>
+    <div class="title">Vini dou</div>
+    <div class="details">2017 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Vivane Serval</div>
+    <div class="title">Une femme amoureuse</div>
+    <div class="details">2017 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Warped</div>
+    <div class="title">Woman</div>
+    <div class="details">2015 - Reggae</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Warren</div>
+    <div class="title">À fleur de vous</div>
+    <div class="details">2009 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Warren</div>
+    <div class="title">À la folie</div>
+    <div class="details">2010 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Warren</div>
+    <div class="title">Prêt à changer</div>
+    <div class="details">2013 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Will</div>
+    <div class="title">L'espoir fou</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Willy</div>
+    <div class="title">Barbie</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Willy</div>
+    <div class="title">Kass le lit Willy</div>
+    <div class="details">2020 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Willy</div>
+    <div class="title">Tyinbo Réyoné</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Willy Ververt</div>
+    <div class="title">Âme sœur</div>
+    <div class="details">2018 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Windblows</div>
+    <div class="title">Kass Kabinn</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Windblows</div>
+    <div class="title">Pic sa ourite</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Windy</div>
+    <div class="title">Merci momon</div>
+    <div class="details">2016 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Wizdom</div>
+    <div class="title">Mon paradis</div>
+    <div class="details">2015 - Ballade</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">YAËLLE TRULES</div>
+    <div class="title">Prends mon main</div>
+    <div class="details">2019 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">YANN</div>
+    <div class="title">Je chante pour my lady</div>
+    <div class="details">2018 - Ragga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">YOAN</div>
+    <div class="title">Kalin</div>
+    <div class="details">2012 - Zouk Love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">YOAN</div>
+    <div class="title">Sauvons</div>
+    <div class="details">2011 - Zouk Love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZAÏR</div>
+    <div class="title">Mon figuir</div>
+    <div class="details">2019 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZEKLER</div>
+    <div class="title">La prison</div>
+    <div class="details">2012 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZEKO</div>
+    <div class="title">La flam (Mo malade)</div>
+    <div class="details">2016 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZEKO</div>
+    <div class="title">Lamitié</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZEKO</div>
+    <div class="title">Mer gran</div>
+    <div class="details">2017 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZEKO & TIFFANIE</div>
+    <div class="title">Zentillom</div>
+    <div class="details">2015 - Maloya - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZETWAL</div>
+    <div class="title">Filaos</div>
+    <div class="details">2017 - Kadence</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZILA</div>
+    <div class="title">Medley</div>
+    <div class="details">2018 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZILWA</div>
+    <div class="title">Bon mangé</div>
+    <div class="details">2017 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZISKAKAN</div>
+    <div class="title">Bato fou</div>
+    <div class="details">1996 - Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZOUK 4 LOVE</div>
+    <div class="title">Everyday</div>
+    <div class="details">2000 - Zouk</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZOUK MACHINE</div>
+    <div class="title">Maldon</div>
+    <div class="details">1990 - Zouk chiré</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZOUKOVERY</div>
+    <div class="title">D'amour ou d'amitié</div>
+    <div class="details">2005 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZOUKOVERY</div>
+    <div class="title">Vis ta vie (voix)</div>
+    <div class="details">2007 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZOUTI</div>
+    <div class="title">Soyons heureux (voix)</div>
+    <div class="details">2012 - Zouk love</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">ZULU & MARIO RAMSAMY</div>
+    <div class="title">La métisse</div>
+    <div class="details">2019 - Seggae - Duo</div>
+  </div>
+</div>
