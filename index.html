@@ -7,14 +7,28 @@
 </style>
 </head>
   <style>
-    body {
+   body {
   margin: 0;
   padding-top: 40px; /* <-- espace au-dessus */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #5e60ce, #9d4edd, #f72585);
+  background-size: 400% 400%;
+  animation: gradientShift 30s ease infinite;
   color: white;
   text-align: center;
   min-height: 100vh;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 footer {
       background-color: rgba(0, 0, 0, 0.3);
@@ -75,6 +89,7 @@ opacity: 0.5;     /* 🔁 ici tu règles la transparence */
     <a class="volet-button" href="international.html">🌍 Variété internationale</a>
     <a class="volet-button" href="français.html">🗼 Variété française</a>
     <a class="volet-button" href="iles.html">🏝️ Variété des îles</a>
+    <a class="volet-button" href="nouveaute.html">🌟 Nouveauté</a>
   </div>
 
 </body>
