@@ -87,29 +87,41 @@
     <!-- Chansons ajoutées -->
   </div>
 
-  <script>
+ <script>
   const searchInput = document.getElementById('search');
   const songs = document.getElementsByClassName('song');
 
-  // Fonction pour nettoyer et normaliser le texte
   function normalize(text) {
     return text
       .toLowerCase()
-      .normalize("NFD")                     // décompose accents
-      .replace(/[\u0300-\u036f]/g, "")     // supprime accents
-      .replace(/['’"()\-.,]/g, "")         // supprime ponctuation
-      .replace(/\s+/g, " ")                // réduit les espaces
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/['’"()\-.,]/g, "")
+      .replace(/\s+/g, " ")
       .trim();
   }
 
-  searchInput.addEventListener('input', function () {
-    const filter = normalize(this.value);
+  // Fonction debounce pour retarder l'exécution
+  function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+  }
+
+  function filterSongs() {
+    const filter = normalize(searchInput.value);
     for (let i = 0; i < songs.length; i++) {
       const text = normalize(songs[i].innerText);
       songs[i].style.display = text.includes(filter) ? 'flex' : 'none';
     }
-  });
+  }
+
+  // Écoute avec debounce
+  searchInput.addEventListener('input', debounce(filterSongs, 300));
 </script>
+
 
   </script>
 </body>
