@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎈 Enfance</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #e94560);
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    #search {
+      display: block;
+      margin: 0 auto 2rem;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .song-list {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .song {
+      display: flex;
+      align-items: center;
+      background: rgba(255 255 255 / 0.15);
+      margin-bottom: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+    }
+    .song:hover {
+      background: rgba(255 255 255 / 0.3);
+      cursor: pointer;
+    }
+     .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+    .artist {
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    }
+    .title {
+      font-size: 1rem;
+      font-style: italic;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+    .details {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+  ...
+  .details {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+</style>
+</head>
+<body>
+  <h1>🎈 Enfance</h1>
+
+  <!-- Champ de recherche -->
+  <input type="text" id="search" placeholder="Rechercher par artiste, titre ou année...">
+
+  <div class="song-list">
+    <!-- Chansons ajoutées -->
+  </div>
+
+ <script>
+  const searchInput = document.getElementById('search');
+  const songs = document.getElementsByClassName('song');
+
+  function normalize(text) {
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/['’"()\-.,]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  // Fonction debounce pour retarder l'exécution
+  function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+  }
+
+  function filterSongs() {
+    const filter = normalize(searchInput.value);
+    for (let i = 0; i < songs.length; i++) {
+      const text = normalize(songs[i].innerText);
+      songs[i].style.display = text.includes(filter) ? 'flex' : 'none';
+    }
+  }
+
+  // Écoute avec debounce
+  searchInput.addEventListener('input', debounce(filterSongs, 300));
+</script>
+
+
+  </script>
+</body>
+</html>
+
+ <div class="song">
+  <div class="info">
+    <div class="artist">Aladdin</div>
+    <div class="title">Ce rêve bleu</div>
+    <div class="details">1992 - Chanson Disney</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Bernard Minet</div>
+    <div class="title">Juliette je t’aime</div>
+    <div class="details">1989 - Générique / Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dominique Paturel & Dominique Laurent</div>
+    <div class="title">Candy</div>
+    <div class="details">1978 - Générique / Chanson pour enfants</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dorothée</div>
+    <div class="title">La machine avalée</div>
+    <div class="details">1980 - Variété / Chanson pour enfants</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dorothée</div>
+    <div class="title">Nicolas et Marjolaine</div>
+    <div class="details">1982 - Variété / Chanson pour enfants</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dorothée</div>
+    <div class="title">Tremblement de terre</div>
+    <div class="details">1992 - Variété / Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Dorothée</div>
+    <div class="title">Valise</div>
+    <div class="details">1993 - Variété / Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Eric Charden</div>
+    <div class="title">Albator</div>
+    <div class="details">1980 - Générique / Chanson télé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">L'école des Champions</div>
+    <div class="title">L'école des Champions</div>
+    <div class="details">1993 - Générique TV / Chanson enfant</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">La reine des neiges</div>
+    <div class="title">Libérée, Délivrée</div>
+    <div class="details">2013 - Bande originale / Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">La reine des neiges</div>
+    <div class="title">Je voudrais un bonhomme de neige</div>
+    <div class="details">2013 - Bande originale / Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Le Collège des Cœurs Brisés</div>
+    <div class="title">Le Collège des Cœurs Brisés</div>
+    <div class="details">1984 - Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Le Livre de la Jungle</div>
+    <div class="title">Il en faut peu pour être heureux</div>
+    <div class="details">1967 - Chanson Disney</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Le Roi Lion</div>
+    <div class="title">Hakuna Matata</div>
+    <div class="details">1994 - Chanson Disney</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Le Roi Lion</div>
+    <div class="title">L'histoire de la vie</div>
+    <div class="details">1994 - Chanson Disney</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Les Maîtres de l'Univers</div>
+    <div class="title">Les Maîtres de l'Univers</div>
+    <div class="details">1987 - Générique dessin animé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Les Mondes Engloutis</div>
+    <div class="title">Les Mondes Engloutis</div>
+    <div class="details">1985 - Générique dessin animé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Les Mystérieuses Cités d'Or</div>
+    <div class="title">Les Mystérieuses Cités d'Or</div>
+    <div class="details">1982 - Générique dessin animé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Mary Poppins</div>
+    <div class="title">Supercalifragilisticexpialidocious</div>
+    <div class="details">1964 - Musique de film</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Medley</div>
+    <div class="title">Dessins animés années 80</div>
+    <div class="details">1980 - Medley / Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Nicky Larson</div>
+    <div class="title">Nicky Larson</div>
+    <div class="details">1989 - Générique dessin animé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Olive et Tom</div>
+    <div class="title">Olive et Tom</div>
+    <div class="details">1988 - Générique dessin animé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Pokémon</div>
+    <div class="title">Attrapez-les tous !</div>
+    <div class="details">1997 - Générique dessin animé</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Raiponce</div>
+    <div class="title">Où est la vraie vie</div>
+    <div class="details">2010 - Générique film d’animation</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ranma 1/2</div>
+    <div class="title">Ranma 1/2</div>
+    <div class="details">1989 - Générique série animée</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Richard Simon</div>
+    <div class="title">Capitaine Flam</div>
+    <div class="details">1981 - Générique / Chanson pour enfants</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ulysse 31</div>
+    <div class="title">Ulysse 31</div>
+    <div class="details">1981 - Générique série animée</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Vaiana</div>
+    <div class="title">Le bleu lumière</div>
+    <div class="details">2016 - Générique film d’animation</div>
+  </div>
+</div>
