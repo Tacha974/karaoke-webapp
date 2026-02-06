@@ -89,39 +89,54 @@
   </div>
 
  <script>
-  const searchInput = document.getElementById('search');
-  const songs = document.getElementsByClassName('song');
+const searchInput = document.getElementById('search');
+const songs = Array.from(document.getElementsByClassName('song'));
 
-  function normalize(text) {
-    return text
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/['’"()\-.,]/g, "")
-      .replace(/\s+/g, " ")
-      .trim();
+// Fonction pour normaliser le texte (minuscules, sans accents, sans ponctuation)
+function normalize(text) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/['’"()\-.,]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// 🔹 Pré-calculer le texte normalisé de chaque chanson
+const songsData = songs.map(song => ({
+  element: song,
+  text: normalize(song.innerText)
+}));
+
+// 🔹 Fonction debounce
+function debounce(func, delay) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+// 🔹 Fonction de filtrage rapide
+function filterSongs() {
+  const filter = normalize(searchInput.value);
+  
+  // Si champ vide, on affiche tout directement
+  if (!filter) {
+    songsData.forEach(song => song.element.style.display = 'flex');
+    return;
   }
 
-  // Fonction debounce pour retarder l'exécution
-  function debounce(func, delay) {
-    let timeout;
-    return function (...args) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), delay);
-    };
-  }
+  songsData.forEach(song => {
+    song.element.style.display = song.text.includes(filter) ? 'flex' : 'none';
+  });
+}
 
-  function filterSongs() {
-    const filter = normalize(searchInput.value);
-    for (let i = 0; i < songs.length; i++) {
-      const text = normalize(songs[i].innerText);
-      songs[i].style.display = text.includes(filter) ? 'flex' : 'none';
-    }
-  }
-
-  // Écoute avec debounce
-  searchInput.addEventListener('input', debounce(filterSongs, 300));
+// 🔹 Écoute de l'input avec debounce très court (200ms)
+searchInput.addEventListener('input', debounce(filterSongs, 200));
 </script>
+
 
 
   </script>
@@ -8043,14 +8058,6 @@
     <div class="details">1985 - Pop / Rock français</div>
   </div>
 </div> 
-
-<div class="song">
-  <div class="info">
-    <div class="artist">J. JACQUES GOLDMAN</div>
-    <div class="title">Je te donne</div>
-    <div class="details">1985 - Pop rock</div>
-  </div>
-</div>
 
 <div class="song">
   <div class="info">
@@ -19025,3 +19032,36 @@
     <div class="details">1972 - Chanson française / variété</div>
   </div>
 </div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Partenaire Particulier</div>
+    <div class="title">Partenaire particulier</div>
+    <div class="details">1985 - Pop française</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Claude Barzotti</div>
+    <div class="title">Papa</div>
+    <div class="details">1997 - Pop / Chanson française</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">J. JACQUES GOLDMAN &amp; MICHAEL JONES</div>
+    <div class="title">Je te donne</div>
+    <div class="details">1985 - Pop rock - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">M. Pokora</div>
+    <div class="title">Quand même</div>
+    <div class="details">2025 - Pop française / Ballade</div>
+  </div>
+</div>
+

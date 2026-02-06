@@ -88,40 +88,55 @@
     <!-- Chansons ajoutées -->
   </div>
 
-  <script>
-  const searchInput = document.getElementById('search');
-  const songs = document.getElementsByClassName('song');
+ <script>
+const searchInput = document.getElementById('search');
+const songs = Array.from(document.getElementsByClassName('song'));
 
-  function normalize(text) {
-    return text
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/['’"()\-.,]/g, "")
-      .replace(/\s+/g, " ")
-      .trim();
+// Fonction pour normaliser le texte (minuscules, sans accents, sans ponctuation)
+function normalize(text) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/['’"()\-.,]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// 🔹 Pré-calculer le texte normalisé de chaque chanson
+const songsData = songs.map(song => ({
+  element: song,
+  text: normalize(song.innerText)
+}));
+
+// 🔹 Fonction debounce
+function debounce(func, delay) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+// 🔹 Fonction de filtrage rapide
+function filterSongs() {
+  const filter = normalize(searchInput.value);
+  
+  // Si champ vide, on affiche tout directement
+  if (!filter) {
+    songsData.forEach(song => song.element.style.display = 'flex');
+    return;
   }
 
-  // Fonction debounce pour retarder l'exécution
-  function debounce(func, delay) {
-    let timeout;
-    return function (...args) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), delay);
-    };
-  }
+  songsData.forEach(song => {
+    song.element.style.display = song.text.includes(filter) ? 'flex' : 'none';
+  });
+}
 
-  function filterSongs() {
-    const filter = normalize(searchInput.value);
-    for (let i = 0; i < songs.length; i++) {
-      const text = normalize(songs[i].innerText);
-      songs[i].style.display = text.includes(filter) ? 'flex' : 'none';
-    }
-  }
-
-  // Écoute avec debounce
-  searchInput.addEventListener('input', debounce(filterSongs, 300));
+// 🔹 Écoute de l'input avec debounce très court (200ms)
+searchInput.addEventListener('input', debounce(filterSongs, 200));
 </script>
+
 
 
   </script>
@@ -8814,5 +8829,69 @@
     <div class="artist">J. Roland Miquel</div>
     <div class="title">Rougail sega</div>
     <div class="details">Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ulrick</div>
+    <div class="title">Quand tu bouges ton corps</div>
+    <div class="details">Zouk / Kompa</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Clif Azor</div>
+    <div class="title">Menti Menti</div>
+    <div class="details">2021 - Séga</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Ti Sours</div>
+    <div class="title">Nou na ase</div>
+    <div class="details">2000 - Séga / Maloya</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Algéric</div>
+    <div class="title">Amour consumé</div>
+    <div class="details">2023 - Reggae / Pop</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Kent1 &amp; MC BOX</div>
+    <div class="title">Mon sang</div>
+    <div class="details">2024 - Séga / Maloya - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Kent1 &amp; Rashel</div>
+    <div class="title">Suiv a mwin</div>
+    <div class="details">2025 - Séga / Musique créole - Duo</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Wizdom</div>
+    <div class="title">La Réunion lé la</div>
+    <div class="details">2025 - Afro-Pop / Musique créole</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Kiltir Maloya</div>
+    <div class="title">Papa</div>
+    <div class="details">2019 - Maloya / Musique créole</div>
   </div>
 </div>
