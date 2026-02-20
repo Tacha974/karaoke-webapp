@@ -87,39 +87,38 @@
     <!-- Chansons ajoutées -->
   </div>
 
- <script>
-  const searchInput = document.getElementById('search');
-  const songs = document.getElementsByClassName('song');
+<script>
+const searchInput = document.getElementById('search');
 
-  function normalize(text) {
-    return text
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/['’"()\-.,]/g, "")
-      .replace(/\s+/g, " ")
-      .trim();
-  }
+function normalize(text) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/['’"()\-.,]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
-  // Fonction debounce pour retarder l'exécution
-  function debounce(func, delay) {
-    let timeout;
-    return function (...args) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), delay);
-    };
-  }
+function debounce(func, delay) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), delay);
+  };
+}
 
-  function filterSongs() {
-    const filter = normalize(searchInput.value);
-    for (let i = 0; i < songs.length; i++) {
-      const text = normalize(songs[i].innerText);
-      songs[i].style.display = text.includes(filter) ? 'flex' : 'none';
-    }
-  }
+function filterSongs() {
+  const songs = document.querySelectorAll('.song'); // ← récupéré ici
+  const filter = normalize(searchInput.value);
 
-  // Écoute avec debounce
-  searchInput.addEventListener('input', debounce(filterSongs, 300));
+  songs.forEach(song => {
+    const text = normalize(song.innerText);
+    song.style.display = text.includes(filter) ? 'flex' : 'none';
+  });
+}
+
+searchInput.addEventListener('input', debounce(filterSongs, 200));
 </script>
 
 

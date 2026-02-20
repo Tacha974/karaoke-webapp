@@ -88,11 +88,9 @@
     <!-- Chansons ajoutées -->
   </div>
 
- <script>
+<script>
 const searchInput = document.getElementById('search');
-const songs = Array.from(document.getElementsByClassName('song'));
 
-// Fonction pour normaliser le texte (minuscules, sans accents, sans ponctuation)
 function normalize(text) {
   return text
     .toLowerCase()
@@ -103,13 +101,6 @@ function normalize(text) {
     .trim();
 }
 
-// 🔹 Pré-calculer le texte normalisé de chaque chanson
-const songsData = songs.map(song => ({
-  element: song,
-  text: normalize(song.innerText)
-}));
-
-// 🔹 Fonction debounce
 function debounce(func, delay) {
   let timeout;
   return function (...args) {
@@ -118,25 +109,18 @@ function debounce(func, delay) {
   };
 }
 
-// 🔹 Fonction de filtrage rapide
 function filterSongs() {
+  const songs = document.querySelectorAll('.song'); // ← récupéré ici
   const filter = normalize(searchInput.value);
-  
-  // Si champ vide, on affiche tout directement
-  if (!filter) {
-    songsData.forEach(song => song.element.style.display = 'flex');
-    return;
-  }
 
-  songsData.forEach(song => {
-    song.element.style.display = song.text.includes(filter) ? 'flex' : 'none';
+  songs.forEach(song => {
+    const text = normalize(song.innerText);
+    song.style.display = text.includes(filter) ? 'flex' : 'none';
   });
 }
 
-// 🔹 Écoute de l'input avec debounce très court (200ms)
 searchInput.addEventListener('input', debounce(filterSongs, 200));
 </script>
-
 
 
   </script>
@@ -19070,5 +19054,29 @@ searchInput.addEventListener('input', debounce(filterSongs, 200));
     <div class="artist">Amine</div>
     <div class="title">Juste un oui</div>
     <div class="details">2009 - Pop française</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Bilal Hassani</div>
+    <div class="title">Papa maman</div>
+    <div class="details">2021 - Pop française</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Jane Constance</div>
+    <div class="title">À travers tes yeux</div>
+    <div class="details">2016 - Pop / Chanson française</div>
+  </div>
+</div>
+
+<div class="song">
+  <div class="info">
+    <div class="artist">Killerpilze</div>
+    <div class="title">Un premier matin</div>
+    <div class="details">2007 - Pop rock / Pop punk</div>
   </div>
 </div>
